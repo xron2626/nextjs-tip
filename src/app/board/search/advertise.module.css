@@ -1,0 +1,842 @@
+/* left 팁: 항상 공백있으면 그거 0으로 하면 깔끔함 */
+
+.disappear {
+    font-size: 0;
+}
+.area21{
+    display: flex;
+    margin-left:3%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    /*50% -> 70%*/
+    width:75%;
+    font-size:100px;
+    /*background-color: yellow;*/
+
+}
+
+.box {
+    background-color: powderblue;
+    color: white;
+    width: 14.5%;
+    height: 40px;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
+}
+
+#loginBox {
+
+    margin-top: 40px;
+    margin-right: 5px;
+}
+
+#joinBox {
+
+
+    margin-top: 40px;
+    margin-right: 0;
+}
+
+#home {
+
+    width: 5.2%;
+    height: 1.5cm;
+    margin-top: 35px;
+    margin-left: 0;
+}
+
+#writeBox {
+
+
+    margin-top: 40px;
+
+}
+
+#readBox {
+
+
+    margin-top: 40px;
+}
+
+
+
+.marginBox {
+    background-color: powderblue;
+    position: absolute;
+    display: inline;
+    padding: 22px;
+    padding-right: 102.5px;
+    /*border: 1px solid;*/
+    left: 60%;
+    top: 1.1cm;
+
+}
+
+#github {
+    position: absolute;
+    left: 5%;
+    top: 18%;
+}
+
+#tistory {
+    position: absolute;
+    left: calc(((10% + 30px) + (90% - 30px) - 40px) / 2);
+    top: 6%;
+    margin-right: 0.1px;
+    color: powderblue;
+}
+
+#email {
+    position: absolute;
+    top: 9%;
+    left: calc(90% - 24px);
+    margin-right: 0;
+}
+
+#section {
+    position: relative;
+    top: 1.1cm;
+    /*background-color: greenyellow;*/
+
+    width: 57.9%;
+}
+
+.bodyHeader {
+    /*background-color: pink;*/
+    position: relative;
+    left: 7.4%;
+    width: 100%;
+    height: 1.3cm;
+}
+
+#textarea {
+    position: absolute;
+    font-size: 20px;
+    height: 1.3cm;
+    width: 70%;
+    margin: 0;
+    left:0;
+
+}
+
+/*
+ searchButton이랑 write Button은 둘다 absolute에서
+*/
+#searchButton {
+    position: relative;
+    left: 75.3%;
+    width: 10%;
+    height: 1.3cm;
+    font-size: 20px;
+    background-color: powderblue;
+    color: white;
+    text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray;
+
+
+
+}
+
+#writeButton {
+
+    position: absolute;
+
+    top: 0cm;
+    left: 90%;
+    width: 10%;
+    height: 1.3cm;
+    font-size: 20px;
+    background-color: powderblue;
+
+    color: white;
+    text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray;
+}
+
+#inline {
+    display: inline;
+}
+
+.inline {
+    display: inline;
+}
+#exit {
+    position: absolute;
+    top: 0;
+    left: calc(100% - 1.75cm);
+    width: 2cm;
+}
+
+.th {
+    border-top: 4px solid black;
+    border-bottom: 2px solid black;
+}
+
+#table {
+    position: relative;
+    text-align: center;
+    left: 7.4%;
+    border-spacing: 0px;
+    width: 100%;
+
+    table-layout: fixed;
+    writing-mode: horizontal-tb;
+
+
+}
+
+.td {
+    border-bottom: 2px solid black;
+}
+
+.thId {
+    width: 15%;
+    background-color: pink;
+}
+
+.thTitle {
+    width: 30%;
+    background-color: aqua;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.thAuthor {
+    width: 20%;
+    background-color: aquamarine;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.thDate {
+    width: 25%;
+    background-color: pink;
+}
+
+.tr {
+    height: 1cm;
+
+}
+
+#aside {
+    position: absolute;
+    width: 26%;
+    height: 15cm;
+    left: 69.1%;
+    top: 3.45cm;
+   /* background-color: yellow;*/
+}
+
+#advertisement {
+    background-color: pink;
+    position: absolute;
+    top: 0cm;
+    width: 100%;
+    height: 15cm;
+    left: 0;
+}
+
+
+#footer {
+    position: relative;
+
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    top: 12cm;
+    width: 100%;
+    height: 1.52cm;
+    /*left: 12cm;*/
+    background-color: pink;
+
+}
+
+#footerText {
+    display: flex;
+    position: relative;
+    align-content: flex-end;
+    justify-content: space-around;
+    padding-left: calc((100vw - 100%) / 2); /* 브라우저의 스크롤바 너비를 계산하여 왼쪽 패딩 값을 조정합니다 */
+
+}
+
+.container2 {
+    position: relative;
+    flex-direction: row;
+    display: inline-flex;
+    justify-content: space-between;
+    left: 7.4%;
+    width: 100%;
+    height: 1cm;
+    /*background-color: pink;*/
+}
+.itema {
+    cursor: pointer;
+
+}
+
+@media (max-width: 1500px) {
+
+    .marginBox {
+        left:85.7%;
+
+
+
+    }
+}
+
+
+@media (max-width: 1200px) {
+
+    .box {
+        width: 17%;
+
+    }
+
+
+
+    #home {
+
+        width: 5.2%;
+        height: 1.5cm;
+        margin-top: 30px;
+        margin-left: 0;
+    }
+
+
+
+
+    .marginBox {
+        left:84%;
+    }
+
+}
+@media (max-width: 1149px) {
+    .marginBox {
+        left:83.5%;
+    }
+
+
+}
+@media (max-width: 1128px) {
+    #aside {
+        position: absolute;
+        width: 0%;
+        height: 0;
+        left: 69.1%;
+        top: 0;
+       /* background-color: yellow;*/
+    }
+
+    #exit {
+        position: absolute;
+        top: 0;
+        left: calc(100% - 1.75cm);
+        width: 0;
+    }
+
+    #section {
+        position: relative;
+        top: 1cm;
+        margin-top: 10px;
+      /*  background-color: greenyellow;*/
+
+        width: 85%;
+    }
+    .marginBox {
+        left:80.6%;
+    }
+
+
+    #writeButton {
+
+        position: absolute;
+
+        top: 0cm;
+        left: 90%;
+        width: 10%;
+        height: 1.3cm;
+        font-size: 20px;
+        background-color: powderblue;
+
+        color: white;
+        text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray;
+    }
+
+}
+
+
+@media (max-width: 1100px) {
+
+    .area21{
+        display: flex;
+        margin-left:1cm;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        width:89%;
+        font-size:100px;
+     /*   background-color: yellow;*/
+
+    }
+    .marginBox {
+        padding: 0;
+        height: 0;
+
+    }
+    #github {
+        width: 0;
+        height: 0;
+    }
+    #tistory{
+        width: 0;
+        height: 0;
+    }
+    #email{
+        width: 0;
+        height: 0;
+    }
+    #footer{
+        width:100%;
+    }
+}
+@media (max-width: 800px) {
+    #writeButton {
+        position: absolute;
+        top: 0cm;
+        left: 90%;
+        width: 10%;
+        height: 1.3cm;
+        font-size: 1.2rem;
+        background-color: powderblue;
+        color: white;
+        text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray;
+    }
+}
+@media (max-width: 749px) {
+    #searchButton {
+        position: relative;
+        left: 75%;
+        width: 10%;
+        height: 1.3cm;
+        font-size: 15px;
+        background-color: powderblue;
+        color: white;
+        text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray;
+
+
+
+    }
+
+    #writeButton {
+
+        position: absolute;
+
+        top: 0cm;
+        left: 90%;
+        width: 10%;
+        height: 1.3cm;
+        font-size: 15px;
+        background-color: powderblue;
+
+        color: white;
+        text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray;
+    }
+}
+
+
+
+@media (max-width: 685px) {
+
+    .area21{
+        display: flex;
+        margin-left:4.3%;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        width:90%;
+        font-size:100px;
+       /* background-color: yellow;*/
+
+    }
+    .box {
+        width: 20%;
+
+    }
+
+    #home {
+
+        width: 0%;
+        height: 1.5cm;
+        top: 30px;
+        margin-left: 0;
+    }
+
+
+    #searchButton {
+        position: relative;
+        left: 75%;
+        width: 10%;
+        height: 1.3cm;
+        font-size: 14px;
+        background-color: powderblue;
+        color: white;
+        text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray;
+
+
+
+    }
+
+    #writeButton {
+
+        position: absolute;
+
+        top: 0cm;
+        left: 90%;
+        width: 10%;
+        height: 1.3cm;
+        font-size: 14px;
+        background-color: powderblue;
+
+        color: white;
+        text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray;
+    }
+
+}
+
+@media (max-width: 572px) {
+
+    .area21{
+        display: flex;
+        margin-left:0.9cm;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        width:85.2%;
+        font-size:100px;
+       /* background-color: yellow;*/
+
+    }
+    #searchButton {
+        position: relative;
+        left: 75%;
+        width: 10%;
+        height: 1.3cm;
+        font-size: 14.4px;
+        background-color: powderblue;
+        color: white;
+        text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray;
+
+
+
+    }
+
+    #writeButton {
+
+        position: absolute;
+
+        top: 0cm;
+        left: 90%;
+        width: 10%;
+        height: 1.3cm;
+        font-size: 14.4px;
+        background-color: powderblue;
+        padding-left: 4px;
+        color: white;
+        text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray;
+    }
+
+}
+/*
+absoulte로 하는경우 마진겹침 막고 싶으면 margin-top 두면 되고
+싫으면 top 쓰면 됨
+relative는 자동으로 들여쓰기가 제공된다는 점
+abosolute는 뒤에 있는 relative가 absolute를반응안한다는 점
+ */
+@media (max-width: 542px) {
+
+    .area21{
+        display: flex;
+        margin-left:4.6%;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        width:90%;
+        font-size:100px;
+      /*  background-color: yellow;*/
+
+    }
+    #searchButton {
+        position: relative;
+        left: 75%;
+        width: 10%;
+        height: 1.3cm;
+        font-size: 14px;
+        background-color: powderblue;
+        color: white;
+        text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray;
+
+
+
+    }
+
+    #writeButton {
+
+        position: absolute;
+
+        top: 0cm;
+        left: 90%;
+        width: 10%;
+        height: 1.3cm;
+        font-size: 14px;
+        padding-left: 3px;
+        background-color: powderblue;
+
+        color: white;
+        text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray;
+    }
+
+
+}
+@media (max-width: 480px) {
+    #searchButton {
+        position: relative;
+        left: 75%;
+        width: 10%;
+        height: 1.3cm;
+        font-size: 3px;
+        background-color: powderblue;
+        color: white;
+        text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray;
+
+
+
+    }
+
+    #writeButton {
+
+        position: absolute;
+
+        top: 0cm;
+        left: 90%;
+        width: 10%;
+        height: 1.3cm;
+        font-size: 3px;
+        background-color: powderblue;
+
+        color: white;
+        text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray;
+    }
+}
+
+@media (max-width: 460px) {
+
+    #searchButton {
+        position: relative;
+        width: 10%;
+        height: 1.3cm;
+        font-size: 0.6rem;
+        background-color: powderblue;
+        color: white;
+        text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray;
+        /*text-indent: 0;*/
+
+
+
+    }
+
+    #writeButton {
+
+        position: relative;
+        /*text-indent: 0;*/
+
+        top: 0cm;
+        left: 79%;
+        width: 10%;
+        height: 1.3cm;
+        font-size: 0.6rem;
+        background-color: powderblue;
+
+        color: white;
+        text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray;
+        padding-left: 4px;
+
+    }
+
+}
+
+@media (max-width: 430px) {
+
+    #searchButton {
+        position: relative;
+        width: 10%;
+        height: 1.3cm;
+        font-size: 0.6rem;
+        background-color: powderblue;
+        color: white;
+        text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray;
+        /*text-indent: 0;*/
+
+
+
+    }
+
+    #writeButton {
+
+        position: absolute;
+        /*text-indent: 0;*/
+        top: 0cm;
+        left: 90%;
+        width: 10%;
+        height: 1.3cm;
+        font-size: 0.6rem;
+        background-color: powderblue;
+
+        color: white;
+        text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray;
+        padding-left: 0.1rem;
+        /*3px가 기본 default값이 16px가 기본이므로 0.1875rem인데 살짝 왼쪽에 치우쳐져있어서 */
+    }
+
+}
+@media (max-width: 414px) {
+    #searchButton {
+        position: relative;
+        width: 10%;
+        height: 1.3cm;
+        font-size: 0.5rem;
+        background-color: powderblue;
+        color: white;
+        text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray;
+        left: 30%;
+
+
+    }
+    #writeButton {
+
+        position: absolute;
+        /*text-indent: 0;*/
+
+        top: 0cm;
+        left: 90%;
+        width: 10%;
+        height: 1.3cm;
+        font-size: 0.5rem;
+        background-color: powderblue;
+
+        color: white;
+        text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray;
+        padding-left: 0.18rem;
+
+    }
+}
+@media (max-width: 410px) {
+
+    #searchButton {
+        position: relative;
+        width: 10%;
+        height: 1.3cm;
+        font-size: 0.5rem;
+        background-color: powderblue;
+        color: white;
+        text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray;
+        /*text-indent: 0;*/
+
+
+
+    }
+
+    #writeButton {
+
+        position: absolute;
+        /*text-indent: 0;*/
+
+        top: 0cm;
+        left: 90%;
+        width: 10%;
+        height: 1.3cm;
+        font-size: 0.5rem;
+        background-color: powderblue;
+
+        color: white;
+        text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray;
+        padding-left: 2px;
+
+    }
+
+
+
+}
+
+@media (max-width: 384px) {
+
+    #searchButton {
+        position: relative;
+        width: 10%;
+        height: 1.3cm;
+        font-size: 0.5rem;
+        background-color: powderblue;
+        color: white;
+        text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray;
+        /*text-indent: 0;*/
+        padding-left: 4px;
+
+
+    }
+
+    #writeButton {
+
+        position: absolute;
+        /*text-indent: 0;*/
+
+        top: 0cm;
+        left: 90%;
+        width: 10%;
+        height: 1.3cm;
+        font-size: 0.5rem;
+        background-color: powderblue;
+
+        color: white;
+        text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray;
+        padding-left: 1px;
+
+    }
+}
+
+@media (max-width: 360px) {
+
+    #searchButton {
+        position: relative;
+        width: 10%;
+        height: 1.3cm;
+        font-size: 0.4rem;
+        background-color: powderblue;
+        color: white;
+        text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray;
+        padding-left: 3px;
+
+
+
+    }
+
+    #writeButton {
+
+        position: absolute;
+        /*text-indent: 0;*/
+
+        top: 0cm;
+        left: 90%;
+        width: 10%;
+        height: 1.3cm;
+        font-size: 0.4rem;
+        background-color: powderblue;
+
+        color: white;
+        text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray;
+        padding-left: 0px;
+
+    }
+
+
+
+}
+
