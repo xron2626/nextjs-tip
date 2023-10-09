@@ -1,0 +1,442 @@
+#backgroundBody{
+    
+    background-color:rgba(80,188,223);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+#google {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 3cm;
+}
+#naver {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 3.65cm;
+}
+
+#login{
+    position: absolute;
+    background-color: white;
+    left:50%;
+    top:50%;
+    width:24cm;
+    height:12cm;
+    margin-left:-12cm;
+    margin-top:-6cm;
+}
+#check{
+
+    background-color: white;
+    width:100%;
+    height:2cm;
+}
+#loginText{
+    position: absolute;
+    text-align:center;
+    left:50%;
+    top:2cm;
+    margin-left:-70px;
+    margin-top:-30px;
+    margin-bottom: -30px;
+    font-size: 30px;
+    letter-spacing:10px;
+}
+#id{
+    position:relative;
+    background-color: powderblue;
+    width:90%;
+    border-radius: 5px 5px 5px 5px;
+    top:1cm;
+    left:5%;
+    height:1cm;
+    color:rgba(0,0,0,0.4);
+    border:0;
+}
+#password{
+    position:relative;
+    background-color: powderblue;
+    width:90%;
+    border-radius: 5px 5px 5px 5px;
+    top:1.5cm;
+    left:5%;
+    height:1cm;
+    color:rgba(0,0,0,0.4);
+    border:0;
+}
+#loginBtn{
+    position:relative;
+    background-color: rgba(0,0,255);
+    width:90%;
+    border-radius: 5px 5px 5px 5px;
+    top:2cm;
+    left:5%;
+    height:1.25cm;
+    color:rgba(255,255,255);
+    border:0;
+}
+
+#findID{
+    position:absolute;
+
+    text-decoration-line: none;
+    top:8cm;
+    left:10%;
+    height:1.25cm;
+    color:black;
+    border:0;
+}
+#findPassword{
+    position:absolute;
+
+    text-decoration-line: none;
+    top:8cm;
+    left:20%;
+    height:1.25cm;
+    color:black;
+    border:0;
+}
+#induce{
+    position:absolute;
+
+    text-decoration-line: none;
+    top:8cm;
+    left:35%;
+    width:80%;
+    height:1.25cm;
+    color:rgba(0,0,0,0.4);
+    border:0;
+    white-space:nowrap;
+
+}
+
+#induce2{
+    position:absolute;
+
+    text-decoration-line: none;
+    top:8cm;
+    left:57%;
+    width:80%;
+    height:1.25cm;
+    color:rgba(0,0,0,0.4);
+    border:0;
+    white-space:nowrap;
+}
+
+#join{
+
+    display:inline;
+    text-decoration-line: none;
+    color:black;
+    font-weight: bold;
+
+}
+#induce3{
+    position:absolute;
+    display:inline;
+    color:rgba(0,0,0,0.4);
+
+
+    border:0;
+}
+#backgroundBtn{
+    position:absolute;
+    left:72%;
+    top:8cm;
+    display:inline;
+    color:rgba(0,0,0);
+    border:0;
+}
+
+#mainBtn{
+    position:absolute;
+    left:78%;
+    top:8cm;
+    display:inline;
+    color:rgba(0,0,0);
+    border:0;
+}
+
+#apply{
+    position:absolute;
+    left:85%;
+    top:8cm;
+    display:inline;
+    color:rgba(0,0,0);
+    border:0;
+}
+@media (max-width: 1000px) {
+    #login{
+        position: absolute;
+        background-color: white;
+        left:50%;
+        top:50%;
+        width:20cm;
+        height:12cm;
+        margin-left:-10cm;
+        margin-top:-6cm;
+    }
+    #flex {
+        display: flex;
+        margin-top: 2.4cm;
+        justify-content: space-around;
+    }
+    #findPassword{
+        position:absolute;
+
+        text-decoration-line: none;
+        top:8cm;
+        left:17%;
+        height:1.25cm;
+        color:black;
+        border:0;
+    }
+
+    #induce{
+        position:absolute;
+
+        text-decoration-line: none;
+        top:8cm;
+        left:30.5%;
+        width:78%;
+        height:1.25cm;
+        color:rgba(0,0,0,0.4);
+        border:0;
+        white-space:nowrap;
+
+    }
+    #induce2{
+        position:absolute;
+        text-decoration-line: none;
+        top:8cm;
+        left:56.5%;
+        width:88%;
+        height:1.25cm;
+        color:rgba(0,0,0,0.4);
+        border:0;
+        white-space:nowrap;
+    }
+
+    #join{
+
+        display:inline;
+        text-decoration-line: none;
+        color:black;
+        font-weight: bold;
+
+    }
+    #induce3{
+        position:absolute;
+        display:inline;
+        color:rgba(0,0,0,0.4);
+        border:0;
+    }
+    #naver {
+        position: absolute;
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        margin-top: 1cm;
+    }
+    #google {
+        position: absolute;
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        margin-top: 1.6cm;
+    }
+    #mainBtn{
+        position:absolute;
+        left:78.5%;
+        top:8cm;
+        display:inline;
+        color:rgba(0,0,0);
+        border:0;
+    }
+}
+
+@media (max-width: 830px) {
+    #login{
+        position: absolute;
+        background-color: white;
+        left:50%;
+        top:50%;
+        width:15cm;
+        height:12cm;
+        margin-left:-7.5cm;
+        margin-top:-6cm;
+    }
+
+
+    #findID{
+
+        text-decoration-line: none;
+        top:8cm;
+        left:25%;
+        height:1.25cm;
+        color:black;
+        border:0;
+    }
+    #findPassword{
+
+        text-decoration-line: none;
+        top:8cm;
+        left:75%;
+        height:1.25cm;
+        color:black;
+        border:0;
+    }
+    #induce{
+        position:absolute;
+
+        text-decoration-line: none;
+        top:10cm;
+        left:22%;
+        width:80%;
+        height:1.25cm;
+        color:rgba(0,0,0,0.4);
+        border:0;
+        white-space:nowrap;
+
+    }
+    #induce2{
+        position:absolute;
+
+        text-decoration-line: none;
+        top:10cm;
+        left:57%;
+        width:80%;
+        height:1.25cm;
+        color:rgba(0,0,0,0.4);
+        border:0;
+        white-space:nowrap;
+    }
+    #naver {
+        position: absolute;
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        margin-top: 0.75cm;
+    }
+    #google {
+        position: absolute;
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        margin-top: 1.4cm;
+    }
+    #backgroundBtn{
+        position:absolute;
+        left:52%;
+        top:8cm;
+        display:inline;
+        color:rgba(0,0,0);
+        border:0;
+    }
+
+    #mainBtn{
+        position:absolute;
+        left:61%;
+        top:8cm;
+        display:inline;
+        color:rgba(0,0,0);
+        border:0;
+    }
+
+    #apply{
+        position:absolute;
+        left:70%;
+        top:8cm;
+        display:inline;
+        color:rgba(0,0,0);
+        border:0;
+    }
+
+
+}
+@media (max-width: 620px) {
+    #login{
+        position: absolute;
+        background-color: white;
+        left:50%;
+        top:50%;
+        width:10cm;
+        height:12cm;
+        margin-left:-5cm;
+        margin-top:-6cm;
+    }
+    #findID{
+
+        text-decoration-line: none;
+        top:8cm;
+        left:10%;
+        height:1.25cm;
+        color:black;
+        border:0;
+    }
+    #findPassword{
+
+        text-decoration-line: none;
+        top:8cm;
+        left:65%;
+        height:1.25cm;
+        color:black;
+        border:0;
+    }
+    #induce{
+        position:absolute;
+
+        text-decoration-line: none;
+        top:10cm;
+        left:12%;
+        width:80%;
+        height:1.25cm;
+        color:rgba(0,0,0,0.4);
+        border:0;
+        white-space:nowrap;
+
+    }
+    #induce2{
+        position:absolute;
+
+        text-decoration-line: none;
+        top:10cm;
+        left:61%;
+        width:80%;
+        height:1.25cm;
+        color:rgba(0,0,0,0.4);
+        border:0;
+        white-space:nowrap;
+    }
+    #backgroundBtn{
+        position:absolute;
+        left:55%;
+        top:8cm;
+        display:inline;
+        color:rgba(0,0,0);
+        border:0;
+    }
+
+    #mainBtn{
+        position:absolute;
+        left:69%;
+        top:8cm;
+        display:inline;
+        color:rgba(0,0,0);
+        border:0;
+    }
+
+    #apply{
+        position:absolute;
+        left:82%;
+        top:8cm;
+        display:inline;
+        color:rgba(0,0,0);
+        border:0;
+    }
+}

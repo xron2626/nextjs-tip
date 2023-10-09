@@ -1,0 +1,150 @@
+#background{
+    background-color: powderblue;
+}
+#top {
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+}
+#top2 {
+
+}
+#author {
+    font-size: 0.4cm;
+    float:right;
+    margin-top: -0.5cm;
+}
+#section {
+    background-color: white;
+    height:10cm;
+    overflow:scroll
+}
+#boardTool {
+    display: flex;
+    width: 100%;
+}
+#feedback {
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+}
+#up {
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+}
+#down {
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+}
+#manage {
+    width: 10%;
+    display: inline-flex;
+    justify-content: space-around;
+}
+#delete {
+    background-color: pink;
+}
+#edit {
+    background-color: pink;
+}
+#comment {
+    background-color: #139ff7;
+    height: 1cm;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+#commentWriteNameArea1 {
+    width: 45%;
+    display: flex;
+    justify-content: space-around;
+    /* border-left: 1px solid black; */
+    background: powderblue;
+}
+#commentWriteNameArea2 {
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    /* border-left: 1px solid black; */
+    background: powderblue;
+}
+
+#commentWritePasswordArea {
+    width: 45%;
+}
+#commentWritePassword1 {
+    width: 100%;
+}
+#white {
+    width: calc(100% - 2px);
+    min-height: 300px;
+}
+.parentComment {
+    min-height: 3cm;
+    background-color: pink;
+}
+.parentWriteComment {
+    width: 90.15%;
+    resize: none;
+    /*height: 335px;*/
+    min-height: 1cm;
+    background-color: pink;
+    display: block;
+}
+.CommentWrtieCustomTool {
+    display: inline-flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+element.style {
+}
+.parentCommentSubmitArea {
+    width: 90.4%;
+    height: 1cm;
+    background: powderblue;
+    /* position: relative; */
+    /* margin-top: -1cm; */
+    /* margin-left: 79.8%; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid black;
+    /* margin: 0; */
+    /* margin-top: -1.07cm; */
+}
+
+.x {
+    height: 2px;
+    color: black;
+    margin: 0;
+    background: black;
+    /* bottom: 10cm; */
+}
+.x3 {
+}
+#flex {
+    display: flex;
+}
+.commentWrite {
+    background-color: powderblue;
+}
+#addReadComment {
+    text-align: center;
+    color: blue;
+}
+
+@media (max-width: 769px) {
+    #manage{
+        width: 20%;
+    }
+}
+@media (max-width: 471px) {
+    #manage{
+        width: 30%;
+    }
+}

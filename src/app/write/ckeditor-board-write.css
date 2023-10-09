@@ -1,0 +1,35 @@
+
+#cke_1_contents {
+    min-height: 480px;
+    width: 100%;
+}
+
+
+#cke_1_resizer {
+    border-width: 0px 0px 0 0;
+    height: 0;
+    width: 0;
+}
+.cke_dialog_ui_hbox_first {
+    width:15%
+}
+@media (max-width: 414px) {
+    .cke_dialog_body {
+        position: relative;
+        left: -15%;
+        width: 88%;
+    }
+
+}
+#cke_contents{
+    margin-top:0cm;
+}
+
+
+#cke_1_bottom{
+    background-color: powderblue;
+}
+#cke_elementspath_11_0,#cke_elementspath_11_1 {
+    color: powderblue;
+}
+

@@ -1,0 +1,23 @@
+
+/* #cke_contents{
+    margin-top:2cm;
+}
+*/
+#cke_1_contents {
+    min-height: 430px;
+    width: 100%;
+    /*88%에서 100%로 바꿈 */
+}
+#cke_1_bottom{
+    background-color: powderblue;
+}
+#cke_elementspath_11_0,#cke_elementspath_11_1 {
+    color: powderblue;
+}
+
+
+
+/*
+#cke_contents margin-top margin-left로 어떻게 크기 맞추면 되긴할듯 ㅇㅇ..
+test.css -> ckeditor-board-edit.css 로 변경
+ */
