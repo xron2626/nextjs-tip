@@ -142,34 +142,6 @@ function Join() {
             alert("시간이 완료되었습니다.");
         }
     }
-    function setUrl() {
-        let url = domainUri + "/user-noneuser/account";
-        let accountData = {
-            "method" : "GET"
-        }
-
-        return fetch(url,accountData).then(function findUsername(response) {
-            return response.text();
-        });
-    }
-    function connect(sessionId) {
-        let stompClient = null;
-        const socket = new SockJS(domainUri+'/my-websocket-endpoint');
-        stompClient = Stomp.over(socket);
-        stompClient.connect({}, function(frame) {
-        console.log('Connected: ' + frame);
-        stompClient.subscribe('/user/'+sessionId+'/queue/messages', function(message) {
-            alert("새로운 글이 작성되었습니다");
-        });
-    });
-    }
-    useEffect(() => {
-        setUrl().then(function(data) {
-          let sessionId = data;
-          connect(sessionId);
-        })
-      }, []);
-      
     return (
         <div id={styles.background}>
             <div className={styles.area21}>
@@ -191,7 +163,7 @@ function Join() {
                 <article id={styles.article}>
                     <div className={styles.con} id={styles.loginHeader}>
                         <div id={styles.login}>
-                            <h1 id={styles.as}>로그인</h1>
+                            <h1 id={styles.as}>회원가입</h1>
                         </div>
                     </div>
                     <div className={styles.con}>
@@ -235,7 +207,7 @@ function Join() {
                     <div className={styles.con3}>
                     <div className={styles.as2}>
                             <p className={styles.x}>이메일</p>
-                            <div>
+                            <div id={styles.emailDiv}>
                                 <input type="text" placeholder="email" id={styles.userEmail} className={styles.flexBox} ref={emailRef}/>
                                 <input type="button" value="인증 버튼" id={styles.checkUserEmailButton} className="inline-flex-1"
                                  onClick={getEmail} />
