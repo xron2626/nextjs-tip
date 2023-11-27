@@ -298,7 +298,7 @@ let jwtTimeData = {
         </div>
         <article>
           <table id={condition ? styles.table : styles2.table}>
-            <thead>
+            <thead id={styles.thead}>
               <tr className={styles.tr}>
                   <th className={`${styles.thId} ${styles.th}`}>번호</th>
                   <th className={`${styles.thTitle} ${styles.th}`}>제목</th>

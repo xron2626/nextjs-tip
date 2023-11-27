@@ -10,11 +10,15 @@ function AdminBoardReadForm() {
     const [disLikeCount, setDisLikeCount] = useState('0'); 
     const [likeCount, setLikeCount] = useState('0'); 
     const [boardContent, setBoardContent] = useState(); 
+    const [titleContent, setTitleContent] = useState('제목'); 
     const [text, setText] = useState('이름'); // 텍스트 상태 설정
     const editButtonRef = useRef(null);
     const deleteButtonRef = useRef(null);
-    
-
+    const [childCommentWriteUserName, setChildCommentWriteUserName] = useState([]);
+    const [childCommentWritePassword, setChildCommentWritePassword] = useState([]);
+    const [childCommentWriteContent, setChildCommentWriteContent] = useState([]);
+    const [childCommentState, setChildCommentState] = useState('close'); // 텍스트 상태 설정
+    const [parentCommentState, setParentCommentState] = useState('close'); // 텍스트 상태 설정
     const commentContentRef = useRef(null);
     const [boardWriterName, setBoardWriterName] = useState(null); 
 
@@ -39,6 +43,7 @@ function AdminBoardReadForm() {
             connect(sessionId);
     
             if(sessionId!==null) {
+                
                 x();
             }
         })
@@ -46,6 +51,77 @@ function AdminBoardReadForm() {
 
     const handleTextChange = (e) => {
       setText(e.target.value); // 텍스트 변경 시 상태 업데이트
+    };
+    const toggleChildComment = (e,index) => {
+        
+        if(childCommentState === "open") {
+            setChildCommentState("close");
+        }
+        else {
+            setChildCommentState("open");
+        }
+    };
+    
+    const toggleParentComment = (e,index) => {
+        
+        if(parentCommentState === "open") {
+            setParentCommentState("close");
+        }
+        else {
+            setParentCommentState("open");
+        }
+    };
+
+    const handleChildCommentContent = (e,index) => {
+        const updatedUserContents = [...childCommentWriteContent];
+        updatedUserContents[index]=e.target.value;
+        setChildCommentWriteContent(updatedUserContents); // 텍스트 변경 시 상태 업데이트
+    };
+
+    const childCommentSubmit = (parentCommentId,parentCommentUserId,index) => {
+        boardId = getBoardId();
+        // alert(parentCommentId);
+        // alert(childCommentWriteUserName);
+        // alert(childCommentWritePassword);
+        // alert(childCommentWriteContent);
+        let url = domainUri+"/noneUser/childComment/"+boardId;
+        let data = {
+            method: "POST",
+            headers: {
+                  // Accept: "application/json",
+                 "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+            "userId":sessionId,
+            "content":childCommentWriteContent[index],
+            "parentId":parentCommentId
+        }),
+        credentials: "include"
+
+    }
+    
+        if(isAddComment===false) {
+            
+        setIsAddComment(true);
+        fetch(url,data) .then(function(response) {
+            if (!response.ok) {
+                console.log("Network response was not ok");
+            }
+            return response.text();
+            })
+            //.then(function(data) {
+        
+        //"http://localhost:8080/boards"+boardId;
+        // 알림 서비스 추가
+
+            // return sendMessage(boardId,childCommentWriteContent,parentCommentUserId);
+            // }).then(function() {
+
+            // });
+        // console.log(isAddCommentClick);
+        // return isAddCommentClick;
+        }
+
     };
     function setUrl() {
         boardId = getBoardId();
@@ -69,6 +145,7 @@ function AdminBoardReadForm() {
             return data;
         })
     }
+
     function getBoardId() {
         boardId = window.location.href.split("/boards/")[1];
         return boardId;
@@ -167,12 +244,12 @@ function AdminBoardReadForm() {
         commentContentRef.current.style.height = "1px";
         commentContentRef.current.style.height = (12+commentContentRef.current.scrollHeight)+"px";
     }
-    const commentSubmit = () => {
+    const parentCommentSubmit = () => {
         if(isAddComment===false) {
             
             setIsAddComment(true);
         boardId = getBoardId();
-        let url = domainUri+"/user/comment/"+boardId;
+        let url = domainUri+"/user/parentComment/"+boardId;
         let data = {
             method: "POST",
             headers: {
@@ -215,6 +292,7 @@ function AdminBoardReadForm() {
         let hrefArrays = document.location.href.split("boards/");
         let borderNumber = hrefArrays[1];
         let content;
+        let title;
         let form = document.createElement('div');
         form.setAttribute('method', 'post'); //POST 메서드 적용
         let url = domainUri+"/boards/"+borderNumber+"/data";
@@ -240,9 +318,11 @@ function AdminBoardReadForm() {
             .then(function (datas) {
                 setBoardWriterName(datas["boardWriterName"]);
                 content = datas["contents"];
+                title = datas["title"];
                 likeCountNumber = datas['likeCount'];
                 disLikeCountNumber = datas["disLikeCount"];
             }).then(function() {
+            setTitleContent(title);
             setBoardContent(content);
             setLikeCount(likeCountNumber);
             setDisLikeCount(disLikeCountNumber);
@@ -282,26 +362,53 @@ function addComment() {
             let newItem = {
                 content: '새로운 내용',
                 username: '새로운 유저',
+                objectId: '임의의 값',
+                userId: '유저 아이디',
+                childCommentReadDataDtos:new Array()
             };
             Object.entries(obj)
-                .forEach(([key, value]) => {      
-                    if(commentId === 11) {
-                        return;
-                    }
-                    if (key === "nickname") {
-                        newItem.username = value;
-                    } else if (key === "content") {
-                        newItem.content = value;
-                    }
-                })
-            if(commentId===11) {
-                return;
-            }
-            setCommentList(prevList => [...prevList, newItem]);
+            .forEach(([key, value]) => {      
+                
+                if (key === "nickname") {
+                    newItem.username = value;
+                } else if (key === "content") {
+                    newItem.content = value;
+                } else  if(key === "objectId") {
+                    newItem.objectId = value;
+                } else if(key ==="userId") {
+                    newItem.userId = value;
+                }
+                else {
+                    // alert("key = "+key+" value = "+value);
+                    
+                    Object.entries(value).forEach(([key2,value2]) => {
+                            let childItem = {
+                                userId: "자식 유저 아이디",
+                                content: '자식 유저의 새로운 내용',
+                                nickname: '자식 유저의 별명'
+                            }
+                            childItem.userId = value2.userId;
+                            childItem.content = value2.content;
+                            // alert(" childItem.content = "+childItem.content)
+                            childItem.nickname = value2.nickname;
+                            newItem.childCommentReadDataDtos.push(childItem)
 
+                        })
+                        
+                        let username ="이름";
+                        let password ="비밀번호";
+                        let content ="내용";
+          
+                        setChildCommentWriteUserName(prevList => [...prevList, username ]);
+                        setChildCommentWritePassword(prevList => [...prevList, password]);
+                        setChildCommentWriteContent(prevList => [...prevList, content]);
+                        
+                }
+            })
+            setCommentList(prevList => [...prevList, newItem]);   
         })
-        console.log("?"+commentId);
-
+        
+        
     });
 
 
@@ -375,9 +482,9 @@ function deleteBoard() {
         <div>
           
             <div id={styles.background}>
-                <div style={{display: "flex",justifyContent: "space-around"}}>
+            <div style={{display: "flex",justifyContent: "space-around",paddingTop:"20px"}}>
                     <div id={styles.top}>
-                        <div id={styles.childTitle}>제목</div>
+                        <div id={styles.childTitle}>{titleContent}</div>
                     </div>
                 </div>
             
@@ -394,6 +501,7 @@ function deleteBoard() {
                             <div>좋아요</div>
                             <div id={styles.likeCount}>{likeCount}</div>
                         </div>
+                        <div id={styles.feedbackCenter}></div>
                         <div id={styles.down} onClick={updateDisLikeCount}>
                             <div>싫어요</div>
                             <div id={styles.disLikeCount}>{disLikeCount}</div>
@@ -406,29 +514,80 @@ function deleteBoard() {
                 </div>
             </div>
             <div id={styles.comment}>댓글</div>
-            <hr className={styles.x}/>
             <div id={styles.commentGroup}>
             {commentList.map((item, index) => (
-                <div key = {index} id={"comment"+{index}}>
-                    <div className={styles.parentReadCommentArea}>
-                        <div className={styles.parentReadCommentName}>{item.username}</div>
+                <div key={index} className={styles.parentCommentDiv0} >
+                        <div className={styles.parentCommentDiv1} id={styles[`parentComment${index}`]}>
+                        <div >
+                            <div className={styles.parentReadCommentArea}>
+                                <div className={styles.parentReadCommentName}>{item.username}</div>
+                            </div>
+                            <div className={styles.parentWriteComment} >{item.content}</div>
+                                <div id={styles.changeId}>
+                                    
+                                        <div id={styles.otherCommentWriteAreaParent}>
+                                        {item.childCommentReadDataDtos.map((item2,index2) =>{
+                                            // alert("commentList["+index+"]."+"childCommentReadDataDtos["+index2+"].content= "+commentList[index].childCommentReadDataDtos[index2].content)
+                                                return(
+                                                
+                                                <div key={index2} className={styles.childCommentDiv}> 
+                                                    <div className={styles.childCommnetReadArea}> 
+                                                        <div id={styles.childCommentSelector}>L</div>
+                                                        <div id={styles.otherCommentWriteNameArea1}>{item2.nickname}</div>
+                                                    </div>
+                                                    
+                                                    <div id={styles.childCommentReadContent}>{item2.content}</div>
+
+                                                    
+                                                </div>)
+                                        })}
+
+                                        <div id={styles.childCommentSelector}>
+                                            <div className={styles.childCommentGuide } onClick={toggleChildComment}>{childCommentState==="open"?"대댓글 감춤":"대댓글 쓰기"}</div>
+                                            <div id={styles.otherChildCommentData}  className={childCommentState==="open"?styles[`block`]:styles[`none`]} >
+                                                <div className={styles.childParentL}>
+                                                    <div>L</div>
+                                                    <div id={styles.otherCommentWriteNameArea1} >
+                                                        <div 
+                                                         suppressContentEditableWarning className={styles.commentWrite1} 
+                                                        id={styles.commentWriteName1}>{text}</div>
+                                                    </div>
+                                                </div>
+                                        
+                                            
+                                                <div id={styles.otherCommentContentArea}>
+                                                    <textarea className={`${styles.parentWriteCommentContent} ${styles.parentWriteComment1}`}   style={{height: "100px"}}
+                                                    onKeyUp={resize} onKeyDown={resize}  value={childCommentWriteContent[index]} onChange={(e) => {handleChildCommentContent(e, index)}} ></textarea>
+                                                </div>
+                                                <div className={styles.parentCommentSubmitArea} id={styles.parentWriteCommentSubmit1}>
+                                                    <div className={styles.parentCommentSubmit}  onClick={()=>childCommentSubmit(item.objectId,item.userId,index)} >전송</div>
+                                                </div>  
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div className={styles.parentWriteComment} >{item.content}</div>
-                </div>
+               </div>
             ))}
-            </div>
-            <div id={styles.flex}>
-                <div id={styles.commentWriteNameArea2}>
-                    <div  className={styles.commentWrite1} id={styles.commentWriteName1} >{text}</div>
+            <div id={styles.parentCommentGuide} onClick={toggleParentComment}>{parentCommentState==="open"?"댓글 감춤":"댓글 쓰기"}</div>
+                <div id={styles.otherCommentWriteAreaParent} className={parentCommentState==="open"?styles[`block`]:styles[`none`]}>
+                    <div id={styles.flex}>
+                        <div id={styles.commentWriteNameArea2}>
+                            <div  className={styles.commentWrite1} id={styles.commentWriteName1} >{text}</div>
+                        </div>
+                    </div>
+                    <div id={styles.otherCommentContentArea}>
+                        <textarea className={styles.parentWriteCommentArea}  id={styles.parentWriteComment1} style={{height: "100px"}}
+                        ref={commentContentRef} onKeyUp={resize} onKeyDown={resize} defaultValue="내용"></textarea>
+                    </div>
+                    <div className={styles.parentCommentSubmitArea} id={styles.parentWriteCommentSubmit1}>
+                        <div className={styles.parentCommentSubmit} onClick={parentCommentSubmit} >전송</div>
+                    </div>
                 </div>
             </div>
-            <textarea className={styles.parentWriteComment}  id={styles.parentWriteComment1} style={{height: "335px"}}
-            ref={commentContentRef} onKeyUp={resize} onKeyDown={resize} ></textarea>
-            <div className={styles.parentCommentSubmitArea} id={styles.parentWriteCommentSubmit1}>
-                <div className={styles.parentCommentSubmit} onClick={commentSubmit} >전송</div>
-            </div>
-            <div id={styles.white}></div>  
         </div>
+        
     )
 }
 export default AdminBoardReadForm;

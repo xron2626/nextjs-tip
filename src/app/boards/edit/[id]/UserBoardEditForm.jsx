@@ -26,6 +26,7 @@ function UserBoardEditForm() {
     const passwordRef = useRef(null);
     const titleRef = useRef(null);
   // section과 footer,header는 id로 적용해서 바꿈 
+  
 
 // div에 header(meta tag)랑 body 쓰면 안됨 class는 className, onclick같은 단어합친거는 camelcase로 onClick같이 변경, onclick="" 이거 였다면 {}로 변경
 // 다른것도 하면 좋은데 안해도 되니까 일단 내버려둠 

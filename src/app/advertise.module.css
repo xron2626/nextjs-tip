@@ -186,30 +186,33 @@
 
 .td {
     border-bottom: 2px solid black;
+    cursor: pointer;
 }
 
 .thId {
     width: 15%;
-    background-color: pink;
+    /*background-color: pink;*/
 }
-
+#thead {
+    background-color: whitesmoke;
+}
 .thTitle {
     width: 30%;
-    background-color: aqua;
+    /*background-color: aqua;*/
     text-overflow: ellipsis;
     overflow: hidden;
 }
 
 .thAuthor {
     width: 20%;
-    background-color: aquamarine;
+    /*background-color: aquamarine;*/
     text-overflow: ellipsis;
     overflow: hidden;
 }
 
 .thDate {
     width: 25%;
-    background-color: pink;
+    /*background-color: pink;*/
 }
 
 .tr {
