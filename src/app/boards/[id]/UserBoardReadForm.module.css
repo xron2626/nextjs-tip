@@ -1,14 +1,24 @@
 #background{
     background-color: powderblue;
 }
+.none {
+    display: none;
+}
+.block {
+    display: block;
+}
 #top {
     width: 90%;
     display: flex;
     justify-content: space-around;
+    background: lavender;
+    margin-bottom: 20px;
+    height: 40px;
+    align-items: center;
+    font-size: 25px;
 }
-#top2 {
 
-}
+
 #author {
     font-size: 0.4cm;
     float:right;
@@ -27,21 +37,29 @@
     display: flex;
     justify-content: space-around;
     width: 90%;
+    border: 1px solid black;
 }
 #up {
     display: flex;
     justify-content: space-around;
     width: 30%;
+    cursor: pointer;
+}
+#feedbackCenter {
+    border: 1px solid black;
 }
 #down {
     display: flex;
     justify-content: space-around;
     width: 30%;
+    cursor: pointer;
 }
 #manage {
     width: 10%;
     display: inline-flex;
     justify-content: space-around;
+    border: 1px solid black;
+    border-left: 0px;
 }
 #delete {
     background-color: pink;
@@ -50,27 +68,118 @@
     background-color: pink;
 }
 #comment {
-    background-color: #139ff7;
+    background-color: powderblue;
     height: 1cm;
     align-items: center;
     display: flex;
     justify-content: space-around;
+    margin-top: 20px;
+    border: 1px solid black;
+    border-bottom: 0px;
+    width: 80vw;
+    margin-left: 50%;
+    transform: translatex(-50%);
+    border-bottom: 3px solid black;
+}
+#commentGroup {
+    width: 80vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid black;
+}
+.parentCommentDiv0 {
+    margin-bottom: 70px;
+}
+#parentComment0 {
+    padding-top: 30px;
 }
 
-#commentWriteNameArea1 {
-    width: 45%;
+.parentReadCommentName {
+    width: 90%;
+    background-color: powderblue;
+    border: 1px solid black;
+    border-left: 0px;
+}
+
+
+#otherCommentWriteAreaParent {
+    margin-bottom: 40px;
+}
+.childCommentDiv {
+    width: 100%;
+    
+}
+
+.childCommnetReadArea {
+    display: flex;
+}
+#childCommentSelector {
+    margin-left: 10%;
+}
+#otherCommentWriteAreaParent2 {
+    width: 80vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+#parentCommentGuide {
+    text-align: center;
+    border: 1px solid black;
+    
+    cursor: pointer;
+    background-color: lavender;
+}
+#otherChildCommentData {
+    width: 100%;
+
+}
+.childCommentGuide {
+    text-align: center;
+    border: 1px solid black;
+    cursor: pointer;
+    background: lavender;
+}
+.childParentL {
+    display: flex;
+}
+
+
+
+
+#otherCommentWriteNameArea1 {
+    flex: 1;
     display: flex;
     justify-content: space-around;
-    /* border-left: 1px solid black; */
     background: powderblue;
 }
+#otherCommentContentArea {
+    display: flex;
+}
+.parentWriteComment1 {
+    resize: none;
+    min-height: 1cm;
+    background-color: pink;
+    display: block;
+    flex: 1;
+}
+
+
+#childCommentReadContent {
+    background: pink;
+    height: 50px;
+    width: 90%;
+    margin-left: 10%;
+    text-align: center;
+}
+
+
 #commentWriteNameArea2 {
-    width: 90.7%;
+    flex:1;
     display: flex;
     justify-content: space-around;
     /* border-left: 1px solid black; */
     background: powderblue;
 }
+
 
 #commentWritePasswordArea {
     width: 45%;
@@ -78,21 +187,25 @@
 #commentWritePassword1 {
     width: 100%;
 }
-#white {
-    width: calc(100% - 2px);
-    min-height: 300px;
-}
+
 .parentComment {
     min-height: 3cm;
     background-color: pink;
 }
 .parentWriteComment {
-    width: 90.15%;
+    width: 90%;
     resize: none;
     /*height: 335px;*/
     min-height: 1cm;
     background-color: pink;
     display: block;
+}
+#parentWriteComment1 {
+    resize: none;
+    min-height: 1cm;
+    background-color: pink;
+    display: block;
+    flex: 1;
 }
 .CommentWrtieCustomTool {
     display: inline-flex;
@@ -101,10 +214,8 @@
     justify-content: flex-end;
 }
 
-element.style {
-}
 .parentCommentSubmitArea {
-    width: 90.4%;
+
     height: 1cm;
     background: powderblue;
     /* position: relative; */
@@ -118,15 +229,6 @@ element.style {
     /* margin-top: -1.07cm; */
 }
 
-.x {
-    height: 2px;
-    color: black;
-    margin: 0;
-    background: black;
-    /* bottom: 10cm; */
-}
-.x3 {
-}
 #flex {
     display: flex;
 }
@@ -140,7 +242,7 @@ element.style {
 
 @media (max-width: 918px) {
     #commentWriteNameArea2 {
-        width: 91%;
+        
         display: flex;
         justify-content: space-around;
         /* border-left: 1px solid black; */
@@ -154,7 +256,7 @@ element.style {
 }
 @media (max-width: 630px) {
     #commentWriteNameArea2 {
-        width: 91.5%;
+        
         display: flex;
         justify-content: space-around;
         /* border-left: 1px solid black; */
@@ -168,7 +270,7 @@ element.style {
 }
 @media (max-width: 440px) {
     #commentWriteNameArea2 {
-        width: 92%;
+        
         display: flex;
         justify-content: space-around;
         /* border-left: 1px solid black; */
