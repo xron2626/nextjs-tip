@@ -1,3 +1,19 @@
+
+@media (min-width: 1553px) {
+    #header {
+        width: 100%;
+    }
+    .left {
+        max-width: 1500px
+    }
+    .item2 {
+        max-width: 1500px;
+
+    }
+    #divCenter {
+        text-align: center;
+    }
+}
 /*원래 none_user_write가 맞는데 도박 한 번 해봄 */
 #header {
     /*background-color: pink;*/

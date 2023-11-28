@@ -1,3 +1,4 @@
+
 /*원래 none_user_write가 맞는데 도박 한 번 해봄 */
 #header {
     /*background-color: pink;*/
@@ -119,6 +120,10 @@
     height:14cm;
     /*border:solid black 1px;*/
     width: 98%;
+}
+#bodyHeader {
+    transform: translateX(-50%);
+    margin-left: 50%;
 }
 .null {
     background-color: powderblue;
@@ -407,6 +412,23 @@
     /*background-color: pink;*/
 
 }
+@media (min-width: 1553px) {
+    #header {
+        width: 100%;
+    }
+    .left {
+        max-width: 1500px
+    }
+    .item2 {
+        max-width: 1500px;
+
+    }
+    #divCenter {
+        text-align: center;
+    }
+
+}
+
 @media (max-width: 1400px) {
 
 
@@ -647,7 +669,7 @@
     #writeButton{
         /*position: absolute;
         left:calc(100% - 2.5cm);*/
-        font-size: 10rem;
+        font-size: 15px;
         background-color: white;
         color: black;
         text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
