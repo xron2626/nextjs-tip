@@ -250,7 +250,7 @@ function UserBoardReadForm() {
             
             setIsAddComment(true);
         boardId = getBoardId();
-        let url = domainUri+"/user/comment/"+boardId;
+        let url = domainUri+"/user/parentComment/"+boardId;
         let data = {
             method: "POST",
             headers: {
