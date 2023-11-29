@@ -471,7 +471,10 @@ function deleteBoard() {
         headers: {
             Accept: "application/json",
             "Content-Type": "application/json"
-        }}
+        },
+        credentials: "include"
+    }
+        
     fetch(url, requestData)
         .then(function (response) {
             window.location.href="/?pageQuantity=1&boardQuantity=20";
