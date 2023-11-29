@@ -474,7 +474,7 @@ function deleteBoard() {
         }}
     fetch(url, requestData)
         .then(function (response) {
-            window.location.href=domainUri+"/?pageQuantity=1&boardQuantity=20";
+            window.location.href="/?pageQuantity=1&boardQuantity=20";
         });
 }
 
