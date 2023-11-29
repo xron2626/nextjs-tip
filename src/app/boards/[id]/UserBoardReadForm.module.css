@@ -63,9 +63,11 @@
 }
 #delete {
     background-color: pink;
+    cursor: pointer;
 }
 #edit {
     background-color: pink;
+    cursor: pointer;
 }
 #comment {
     background-color: powderblue;
@@ -223,6 +225,7 @@
     justify-content: space-around;
     align-items: center;
     border: 1px solid black;
+    cursor: pointer;
         /* position: relative; */
     /* margin-top: -1cm; */
     /* margin-left: 79.8%; */

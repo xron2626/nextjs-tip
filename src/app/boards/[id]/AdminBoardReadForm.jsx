@@ -464,7 +464,7 @@ function deleteBoard() {
     let param = window.location.href.split("boards/")[1];
     // http://localhost:8080/board/admin/29
 
-    let url = domainUri+"/boardd/admin/"+ param;
+    let url = domainUri+"/board/admin/"+ param;
     // 데이터를 전송할 url
     let requestData = {
         method: "DELETE",
