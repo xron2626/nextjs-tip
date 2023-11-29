@@ -23,7 +23,7 @@ none-advertise-boards.css 값이 어떤 게 영향이 갈지 몰라서 이전 �
     width: 14.5%;
     height: 40px;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-
+    font-weight: 900;
 }
 
 #loginBox {
@@ -134,7 +134,7 @@ none-advertise-boards.css 값이 어떤 게 영향이 갈지 몰라서 이전 �
     background-color: powderblue;
     color: white;
     text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray;
-
+    font-weight: 490;
 
 
 }
@@ -152,6 +152,7 @@ none-advertise-boards.css 값이 어떤 게 영향이 갈지 몰라서 이전 �
 
     color: white;
     text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray;
+    font-weight: 490;
 }
 
 #inline {
