@@ -144,6 +144,21 @@
 
     border:0;
 }
+
+#mainPage {
+    position: absolute;
+    display: inline;
+    margin-left: 10%;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+#induce4 {
+    position: absolute;
+    display: inline;
+    margin-left: 10%;
+    margin-left: 14%;
+}
 #backgroundBtn{
     position:absolute;
     left:72%;
@@ -316,6 +331,15 @@
         border:0;
         white-space:nowrap;
     }
+    #mainPage {
+        left: -29%;
+        top: 50%;
+    }
+
+    #induce4 {
+        left: -26%;
+        top: 50%;
+    }
     #naver {
         position: absolute;
         display: flex;
@@ -412,6 +436,15 @@
         color:rgba(0,0,0,0.4);
         border:0;
         white-space:nowrap;
+    }
+    #mainPage {
+        left: -40%;
+        top: 50%;
+    }
+
+    #induce4 {
+        left: -35%;
+        top: 50%;
     }
     #backgroundBtn{
         position:absolute;

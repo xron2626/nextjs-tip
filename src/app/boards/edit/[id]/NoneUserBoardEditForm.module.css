@@ -1,3 +1,4 @@
+
 /*원래 none_user_write가 맞는데 도박 한 번 해봄 */
 #header {
     /*background-color: pink;*/
@@ -456,6 +457,26 @@
     /*background-color: pink;*/
 
 }
+
+@media (min-width: 1253px) {
+    #header {
+        width: 100%;
+    }
+    .left {
+        max-width: 1200px;
+    }
+    .item2 {
+        max-width: 1206px;
+        margin-left: 0.8%;
+        width: 80.1%;
+
+    }
+    #divCenter {
+        text-align: center;
+    }
+
+}
+
 @media (max-width: 1400px) {
 
 

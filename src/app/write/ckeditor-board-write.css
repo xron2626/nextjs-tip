@@ -1,11 +1,13 @@
 
-@media (min-width: 1553px) {
+@media (min-width: 1253px) {
     #cke_contents{
-        width: 1500px;
+        max-width: 1200px;
         display: inline-block;
+        margin-left: 12px;
+        width: 80%;
     }
     .cke_inner {
-        width: 1500px;
+        max-width: 1200px;
     }
 }
 #cke_1_contents {

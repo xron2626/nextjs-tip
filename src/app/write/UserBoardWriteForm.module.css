@@ -1,19 +1,4 @@
 
-@media (min-width: 1553px) {
-    #header {
-        width: 100%;
-    }
-    .left {
-        max-width: 1500px
-    }
-    .item2 {
-        max-width: 1500px;
-
-    }
-    #divCenter {
-        text-align: center;
-    }
-}
 /*원래 none_user_write가 맞는데 도박 한 번 해봄 */
 #header {
     /*background-color: pink;*/
@@ -201,7 +186,7 @@
     flex-direction: row;
     align-items: center;
     flex-wrap: wrap;
-
+    cursor: pointer;
 /* 텍스트 space-evently 로 가운데 정렬 해보기 */
 }
 
@@ -447,6 +432,24 @@
     height: 1cm;
     /*background-color: pink;*/
 
+}
+
+@media (min-width: 1253px) {
+    #header {
+        width: 100%;
+    }
+    .left {
+        max-width: 1200px;
+    }
+    .item2 {
+        max-width: 1206px;
+        margin-left: 0.8%;
+        width: 80.1%;
+
+    }
+    #divCenter {
+        text-align: center;
+    }
 }
 @media (max-width: 1400px) {
 

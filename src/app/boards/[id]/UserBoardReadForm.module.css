@@ -60,6 +60,8 @@
     justify-content: space-around;
     border: 1px solid black;
     border-left: 0px;
+    align-items: center;
+    font-size: 20px;
 }
 #delete {
     background-color: pink;

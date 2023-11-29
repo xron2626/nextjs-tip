@@ -34,6 +34,10 @@ function LoginForm() {
         setPassword(newValue);
         return;
     }
+    const redirectMain = (e) => {
+        location.href="/";
+        return;
+    }
 
     const eraseUsername = () => {
         console.log(usernameClass)
@@ -81,7 +85,10 @@ function LoginForm() {
         <div id={styles.induce2}>지금
             <a href="/join" id={styles.join}> 가입 </a>
             <div id={styles.induce3} > 하세요 </div>
+            <div id={styles.mainPage} onClick={redirectMain}>메인</div>
+            <div id={styles.induce4}>페이지로 이동</div>
         </div>
+        
 
         <div className={styles.panel} id={styles.naver}>
             <a href={naverOauthUrl}>네이버 로그인</a>

@@ -30,7 +30,7 @@ function UserBoardWriteForm() {
         return;
     }
         return (
-        <div>
+            <div id={styles.divCenter}>
                 <Header></Header>
                 <section id={styles.section}>
                     <div className={styles.bodyHeader}>

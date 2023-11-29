@@ -1,4 +1,16 @@
 
+
+@media (min-width: 1253px) {
+    #cke_contents{
+        max-width: 1200px;
+        display: inline-block;
+        margin-left: 12px;
+        width: 80%;
+    }
+    .cke_inner {
+        max-width: 1200px;
+    }
+}
 /* #cke_contents{
     margin-top:2cm;
 }
