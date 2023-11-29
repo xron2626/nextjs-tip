@@ -300,7 +300,7 @@ function NoneUserBoardReadForm() {
             },
             body: JSON.stringify({
             "userId": sessionId,
-            
+            "nickname": usernameRef.current.textContent,
             "content":parentCommentContentRef.current.value,
         }),
         credentials: "include"
