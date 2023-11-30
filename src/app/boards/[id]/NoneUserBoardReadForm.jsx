@@ -571,12 +571,13 @@ function deleteBoard() {
                             <div id={styles.disLikeCount}>{disLikeCount}</div>
                         </div>
                     </div>
-                    <div id={styles.manage} ref={manageRef}>
-                        <div id={styles.edit} onClick={editBoard} ref={editButtonRef}>수정</div>
-                        <div id={styles.delete} onClick={deleteBoard} ref={deleteButtonRef}>삭제</div>
-                    </div>
+                    
                 </div>
             </div>
+            <div id={styles.manage} ref={manageRef}>
+                        <button id={styles.edit} onClick={editBoard} ref={editButtonRef}>수정</button>
+                        <button id={styles.delete} onClick={deleteBoard} ref={deleteButtonRef}>삭제</button>
+                    </div>
             <div id={styles.comment}>댓글</div>
             <div id={styles.commentGroup}>
             {commentList.map((item, index) => (

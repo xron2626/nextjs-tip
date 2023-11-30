@@ -502,21 +502,21 @@ function deleteBoard() {
                 <div id={styles.boardTool}>
                     <div id={styles.feedback}>
                         <div id={styles.up} onClick={updateLikeCount}>
-                            <div>좋아요</div>
+                        <img src="../thumbs-up-solid.svg"></img>
                             <div id={styles.likeCount}>{likeCount}</div>
                         </div>
                         <div id={styles.feedbackCenter}></div>
                         <div id={styles.down} onClick={updateDisLikeCount}>
-                            <div>싫어요</div>
+                        <img src="../thumbs-down-solid.svg"></img>
                             <div id={styles.disLikeCount}>{disLikeCount}</div>
                         </div>
                     </div>
-                    <div id={styles.manage}>
-                        <div id={styles.edit} onClick={editBoard} ref={editButtonRef}>수정</div>
-                        <div id={styles.delete} onClick={deleteBoard} ref={deleteButtonRef}>삭제</div>
-                    </div>
                 </div>
             </div>
+            <div id={styles.manage}>
+                        <button id={styles.edit} onClick={editBoard} ref={editButtonRef}>수정</button>
+                        <button id={styles.delete} onClick={deleteBoard} ref={deleteButtonRef}>삭제</button>
+                    </div>
             <div id={styles.comment}>댓글</div>
             <div id={styles.commentGroup}>
             {commentList.map((item, index) => (
