@@ -528,12 +528,12 @@ function deleteBoard() {
                 <div id={styles.boardTool}>
                     <div id={styles.feedback} ref={feedbackRef}>
                         <div id={styles.up} onClick={updateLikeCount}>
-                            <div>좋아요</div>
+                        <img src="../thumbs-up-solid.svg"></img>
                             <div id={styles.likeCount}>{likeCount}</div>
                         </div>
                         <div id={styles.feedbackCenter}></div>
                         <div id={styles.down} onClick={updateDisLikeCount}>
-                            <div>싫어요</div>
+                        <img src="../thumbs-down-solid.svg"></img>
                             <div id={styles.disLikeCount}>{disLikeCount}</div>
                         </div>
                     </div>

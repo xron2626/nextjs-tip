@@ -43,6 +43,7 @@
     justify-content: space-around;
     width: 30%;
     cursor: pointer;
+    font-size: 20px;
 }
 #feedbackCenter {
     border: 1px solid black;
@@ -52,6 +53,7 @@
     justify-content: space-around;
     width: 30%;
     cursor: pointer;
+    font-size: 20px;
 }
 #manage {
     width: 10%;
