@@ -1,6 +1,7 @@
 
 import styles from "./Join.module.css";
 import { useEffect, useRef, useState } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import SockJS from 'sockjs-client';
 import {Stomp} from '@stomp/stompjs';
@@ -28,6 +29,20 @@ function Join() {
     let domainUri = process.env.NEXT_PUBLIC_API_URL;
   const handleSelect = (e) => {
     setSelected(e.target.value);
+  };
+  const showPassword = (e) => {
+    if(passwordRef.current.type==="text") {
+        passwordRef.current.type="password";
+        return;
+    } 
+    passwordRef.current.type="text";
+  };
+  const showVPasswordVerification = (e) => {
+    if(passwordVerificationRef.current.type==="text") {
+        passwordVerificationRef.current.type="password";
+        return;
+    } 
+    passwordVerificationRef.current.type="text";
   };
     const sendPost = () => {
         // alert("trans = " + Selected);
@@ -175,15 +190,21 @@ function Join() {
                     <div className={styles.con}>
                     <div className={styles.as}>
                             <p className={styles.x}>비밀번호</p>
-                            <input type="text" id={styles.password} placeholder="비밀번호" className={styles.flexBox} 
+                            <div className={styles.flexBox}>
+                            <input type="password" id={styles.password} placeholder="비밀번호" 
                             ref={passwordRef}/>
+                            <img id={styles.passwordImg1} src="./eye-solid.svg" onClick={showPassword}></img>
+                            </div>
                         </div>
                     </div>
                     <div className={styles.con}>
                     <div className={styles.as}>
                             <p className={styles.x}>비밀번호 확인</p>
-                            <input type="text" id={styles.checkPassword} placeholder="비밀번호 확인" className={styles.flexBox}
-                            ref={passwordVerificationRef}/>
+                            <div className={styles.flexBox}>
+                                <input type="password" id={styles.checkPassword} placeholder="비밀번호 확인" 
+                                ref={passwordVerificationRef}/>
+                                <img id={styles.passwordImg2} src="./eye-solid.svg" onClick={showVPasswordVerification}></img>
+                            </div>
                         </div>
                     </div>
                     <div className={styles.con}>

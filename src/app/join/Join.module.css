@@ -141,6 +141,25 @@
     height:1cm;
     width:5cm;
     background: powderblue;
+    display: flex;
+}
+#password {
+    flex: 1;
+    background: powderblue;
+    border: 0px;
+}
+#passwordImg1 {
+    width: 10%;
+    cursor: pointer;
+}
+#checkPassword {
+    flex: 1;
+    background: powderblue;
+    border: 0px;
+}
+#passwordImg2 {
+    width: 10%;
+    cursor: pointer;
 }
 #checkUserEmailButton {
     height: 1.1cm;
