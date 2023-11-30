@@ -575,14 +575,15 @@ function deleteBoard() {
                                             <div className={styles.childCommentGuide } onClick={toggleChildComment}>{childCommentState==="open"?"대댓글 감춤":"대댓글 쓰기"}</div>
                                             <div id={styles.otherChildCommentData}  className={childCommentState==="open"?styles[`block`]:styles[`none`]} >
                                                 <div className={styles.childParentL}>
-                                                    <div>L</div>
-                                                    <div id={styles.otherCommentWriteNameArea1} >
+                                                    <div className={styles.childParentLDiv}>
+                                                        <div>L</div>
+                                                        <div id={styles.otherCommentWriteNameArea1} >
                                                         <div 
-                                                         suppressContentEditableWarning className={styles.commentWrite1} 
-                                                        id={styles.commentWriteName1}>{text}</div>
+                                                            suppressContentEditableWarning className={styles.commentWrite1} 
+                                                            id={styles.commentWriteName1}>{text}</div>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            
                                                 <div id={styles.otherCommentContentArea}>
                                                     <textarea className={`${styles.parentWriteCommentContent} ${styles.parentWriteComment1}`}   style={{height: "100px"}}
                                                 onKeyUp={resize} onKeyDown={resize}  value={childCommentWriteContent[index]} onChange={(e) => {handleChildCommentContent(e, index)}} ></textarea>

@@ -610,22 +610,27 @@ function deleteBoard() {
                                             <div className={styles.childCommentGuide } onClick={toggleChildComment}>{childCommentState==="open"?"대댓글 감춤":"대댓글 쓰기"}</div>
                                             <div id={styles.otherChildCommentData}  className={childCommentState==="open"?styles[`block`]:styles[`none`]} >
                                                 <div className={styles.childParentL}>
-                                                    <div>L</div>
-                                                    <div id={styles.otherCommentWriteNameArea1} >
-                                                        <div contentEditable="true"
-                                                        onInput={(e) => {handleChildCommentUsername(e,index)}} suppressContentEditableWarning className={styles.commentWrite1} 
-                                                        id={styles.commentWriteName1}>{childCommentWriteUserName[index]}</div>
-                                                    </div>
-                                                </div>
-                                                <div id={styles.otherCommentWritePasswordArea}>
+                                                    <div className={styles.childParentLDiv}>
+                                                        <div className={styles.childParentLDivChildDiv}>
+                                                            <div>L</div>
+                                                            <div id={styles.otherCommentWriteNameArea1} >
+                                                                <div contentEditable="true"
+                                                                onInput={(e) => {handleChildCommentUsername(e,index)}} suppressContentEditableWarning className={styles.commentWrite1} 
+                                                                id={styles.commentWriteName1}>{childCommentWriteUserName[index]}</div>
+                                                            </div>
+                                                        </div>
+                                                        <div id={styles.otherCommentWritePasswordArea}>
                                                     <input type="password" className={`${styles.commentWrite1} ${styles.otherCommentWritePassword1}`}  
                                                         onInput={(e) => {handleChildCommentPassword(e, index)}} value={childCommentWritePassword[index]} placeholder="비말번호"/>
+                                                    </div>
                                                 </div>
+                                                
                                         
                                             
                                                 <div id={styles.otherCommentContentArea}>
                                                     <textarea className={`${styles.parentWriteCommentContent} ${styles.parentWriteComment1}`}   style={{height: "100px"}}
                                                 onKeyUp={resize} onKeyDown={resize}  value={childCommentWriteContent[index]} onChange={(e) => {handleChildCommentContent(e, index)}} ></textarea>
+                                                </div>
                                                 </div>
                                                 <div className={styles.parentCommentSubmitArea} id={styles.parentWriteCommentSubmit1}>
                                                     <div className={styles.parentCommentSubmit}  onClick={()=>childCommentSubmit(item.objectId,item.userId,index)} >전송</div>
