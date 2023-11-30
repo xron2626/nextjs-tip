@@ -105,6 +105,7 @@
     margin-left: 50%;
     transform: translateX(-50%);
     border: 1px solid black;
+    
 }
 .parentCommentDiv0 {
     margin-bottom: 70px;
@@ -146,6 +147,7 @@
     margin-top: 20px;
     cursor: pointer;
     background-color: lavender;
+    padding: 10px;
 }
 #otherChildCommentData {
     width: 100%;

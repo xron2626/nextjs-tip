@@ -147,6 +147,7 @@
     
     cursor: pointer;
     background-color: lavender;
+    padding: 10px;
 }
 #otherChildCommentData {
     width: 100%;
