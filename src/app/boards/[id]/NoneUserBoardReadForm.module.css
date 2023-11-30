@@ -1,5 +1,6 @@
 #background{
-    background-color: powderblue;
+    background-color: white;
+    border: 1px solid black; 
 }
 .none {
     display: none;
@@ -11,11 +12,12 @@
     width: 90%;
     display: flex;
     justify-content: space-around;
-    background: lavender;
+    background: #d3d3d375;
     margin-bottom: 20px;
     height: 40px;
     align-items: center;
     font-size: 25px;
+    
 }
 
 #author {
@@ -26,7 +28,8 @@
 #section {
     background-color: white;
     height:10cm;
-    overflow:scroll
+    overflow:scroll;
+    border: 1px solid black;
 }
 #boardTool {
     display: flex;
@@ -67,11 +70,11 @@
     background-color: white;
 }
 #delete {
-    background-color: pink;
+    background-color: lavender;
     cursor: pointer;
 }
 #edit {
-    background-color: pink;
+    background-color: lavender;
     cursor: pointer;
 }
 
@@ -163,7 +166,7 @@
     flex:1;
     display: flex;
     justify-content: space-around;
-    background-color: aliceblue;
+    background-color: #d3d3d375;
     /* border-left: 1px solid black; */
     border: 1px solid black;
 }
@@ -172,7 +175,7 @@
     display: flex;
     justify-content: space-around;
     /* border-left: 1px solid black; */
-    background: powderblue;
+    background: #d3d3d375;
     flex: 1;
 }
 
@@ -195,7 +198,7 @@
 }
 .parentReadCommentName {
     width: 90%;
-    background-color: #ffc0cbb0;
+    background-color: #d3d3d375;
     border: 1px solid black;
     border-left: 0px;
 
@@ -205,7 +208,7 @@
     resize: none;
     /*height: 335px;*/
     min-height: 1cm;
-    background-color: powderblue;
+    background-color: white;
     display: block;
     border-right: 1px solid black;
     border-bottom: 1px solid black;
@@ -218,7 +221,8 @@
     color:white;
 }
 #childCommentReadContent {
-    background: #ffc0cbb0;
+    background: white;
+    border: 1px solid black;
     height: 50px;
     width: 90%;
     margin-left: 10%;
@@ -228,7 +232,7 @@
 .parentWriteComment1 {
     resize: none;
     min-height: 1cm;
-    background-color: #ffc0cbb0;
+    background-color: white;
     display: block;
     flex:1;
 }
@@ -243,7 +247,7 @@
 .parentCommentSubmitArea {
     flex:1;
     height: 1cm;
-    background: lightgray;
+    background: lavender;
     /* position: relative; */
     /* margin-top: -1cm; */
     /* margin-left: 79.8%; */

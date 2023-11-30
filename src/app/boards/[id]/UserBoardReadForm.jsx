@@ -533,7 +533,7 @@ function deleteBoard() {
                         </div>
                         <div id={styles.feedbackCenter}></div>
                         <div id={styles.down} onClick={updateDisLikeCount}>
-                        <img src="../thumbs-down-solid.svg"></img>
+                        <img src="../thumbs-up-solid.svg"></img>
                             <div id={styles.disLikeCount}>{disLikeCount}</div>
                         </div>
                     </div>
@@ -575,15 +575,14 @@ function deleteBoard() {
                                             <div className={styles.childCommentGuide } onClick={toggleChildComment}>{childCommentState==="open"?"대댓글 감춤":"대댓글 쓰기"}</div>
                                             <div id={styles.otherChildCommentData}  className={childCommentState==="open"?styles[`block`]:styles[`none`]} >
                                                 <div className={styles.childParentL}>
-                                                    <div className={styles.childParentLDiv}>
-                                                        <div>L</div>
-                                                        <div id={styles.otherCommentWriteNameArea1} >
+                                                    <div>L</div>
+                                                    <div id={styles.otherCommentWriteNameArea1} >
                                                         <div 
-                                                            suppressContentEditableWarning className={styles.commentWrite1} 
-                                                            id={styles.commentWriteName1}>{text}</div>
-                                                            </div>
-                                                        </div>
+                                                         suppressContentEditableWarning className={styles.commentWrite1} 
+                                                        id={styles.commentWriteName1}>{text}</div>
                                                     </div>
+                                                </div>
+                                            
                                                 <div id={styles.otherCommentContentArea}>
                                                     <textarea className={`${styles.parentWriteCommentContent} ${styles.parentWriteComment1}`}   style={{height: "100px"}}
                                                 onKeyUp={resize} onKeyDown={resize}  value={childCommentWriteContent[index]} onChange={(e) => {handleChildCommentContent(e, index)}} ></textarea>
@@ -602,7 +601,7 @@ function deleteBoard() {
             <div id={styles.parentCommentGuide} onClick={toggleParentComment}>{parentCommentState==="open"?"댓글 감춤":"댓글 쓰기"}</div>
             <div id={styles.otherCommentWriteAreaParent} className={parentCommentState==="open"?styles[`block`]:styles[`none`]}>
                     <div id={styles.flex}>
-                        <div id={styles.commentWriteNameArea1}>
+                        <div id={styles.commentWriteNameArea2}>
                             <div  className={styles.commentWrite1} id={styles.commentWriteName1} >{text}</div>
                         </div>
                     </div>

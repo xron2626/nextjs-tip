@@ -475,6 +475,7 @@ function deleteBoard() {
         credentials: "include"
     }
         
+        
     fetch(url, requestData)
         .then(function (response) {
             window.location.href="/?pageQuantity=1&boardQuantity=20";
@@ -501,12 +502,12 @@ function deleteBoard() {
                 <div id={styles.boardTool}>
                     <div id={styles.feedback}>
                         <div id={styles.up} onClick={updateLikeCount}>
-                        <img src="../thumbs-up-solid.svg"></img>
+                            <div>좋아요</div>
                             <div id={styles.likeCount}>{likeCount}</div>
                         </div>
                         <div id={styles.feedbackCenter}></div>
                         <div id={styles.down} onClick={updateDisLikeCount}>
-                        <img src="../thumbs-down-solid.svg"></img>
+                            <div>싫어요</div>
                             <div id={styles.disLikeCount}>{disLikeCount}</div>
                         </div>
                     </div>
@@ -550,7 +551,7 @@ function deleteBoard() {
                                             <div id={styles.otherChildCommentData}  className={childCommentState==="open"?styles[`block`]:styles[`none`]} >
                                                 <div className={styles.childParentL}>
                                                     <div>L</div>
-                                                    <div id={styles.otherCommentWriteNameArea2} >
+                                                    <div id={styles.otherCommentWriteNameArea1} >
                                                         <div 
                                                          suppressContentEditableWarning className={styles.commentWrite1} 
                                                         id={styles.commentWriteName1}>{text}</div>

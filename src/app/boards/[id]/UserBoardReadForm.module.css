@@ -1,5 +1,6 @@
 #background{
-    background-color: powderblue;
+    background-color: white;
+    border: 1px solid black;
 }
 .none {
     display: none;
@@ -11,7 +12,7 @@
     width: 90%;
     display: flex;
     justify-content: space-around;
-    background: lavender;
+    background: #d3d3d375;
     margin-bottom: 20px;
     height: 40px;
     align-items: center;
@@ -27,7 +28,8 @@
 #section {
     background-color: white;
     height:10cm;
-    overflow:scroll
+    overflow:scroll;
+    border: 1px solid black;
 }
 #boardTool {
     display: flex;
@@ -70,11 +72,11 @@
     background-color: white;
 }
 #delete {
-    background-color: pink;
+    background-color: lavender;
     cursor: pointer;
 }
 #edit {
-    background-color: pink;
+    background-color: lavender;
     cursor: pointer;
 }
 #comment {
@@ -106,7 +108,7 @@
 
 .parentReadCommentName {
     width: 90%;
-    background-color: powderblue;
+    background-color: #d3d3d375;
     border: 1px solid black;
     border-left: 0px;
 }
@@ -153,14 +155,11 @@
     display: flex;
 }
 
-
-
-
 #otherCommentWriteNameArea1 {
     flex: 1;
     display: flex;
     justify-content: space-around;
-    background: aliceblue;
+    background: #d3d3d375;
     border: 1px solid black;
 }
 #otherCommentContentArea {
@@ -169,18 +168,20 @@
 .parentWriteComment1 {
     resize: none;
     min-height: 1cm;
-    background-color: #ffc0cbb0;
+    background-color: white;
+    
     display: block;
     flex: 1;
 }
 
 
 #childCommentReadContent {
-    background: #ffc0cbb0;
+    background: white;
     height: 50px;
     width: 90%;
     margin-left: 10%;
     text-align: center;
+    border: 1px solid black;
     font-size: 15px;
 }
 
@@ -190,7 +191,7 @@
     display: flex;
     justify-content: space-around;
     /* border-left: 1px solid black; */
-    background: powderblue;
+    background: #d3d3d375;
 }
 
 
@@ -210,13 +211,14 @@
     resize: none;
     /*height: 335px;*/
     min-height: 1cm;
-    background-color: #ffc0cbb0;
+    background-color: white;
+    border: 1px solid black;
     display: block;
 }
 #parentWriteComment1 {
     resize: none;
     min-height: 1cm;
-    background-color: #ffc0cbb0;
+    background-color: white;
     display: block;
     flex: 1;
 }
@@ -230,7 +232,7 @@
 .parentCommentSubmitArea {
 
     height: 1cm;
-    background: lightgray;
+    background: #d3d3d375;
 
     display: flex;
     justify-content: space-around;
@@ -261,7 +263,7 @@
         display: flex;
         justify-content: space-around;
         /* border-left: 1px solid black; */
-        background: powderblue;
+        
     }
 }
 @media (max-width: 769px) {
@@ -275,7 +277,7 @@
         display: flex;
         justify-content: space-around;
         /* border-left: 1px solid black; */
-        background: powderblue;
+        
     }
 }
 @media (max-width: 471px) {
@@ -289,6 +291,6 @@
         display: flex;
         justify-content: space-around;
         /* border-left: 1px solid black; */
-        background: powderblue;
+        
     }
 }
