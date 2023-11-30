@@ -647,7 +647,7 @@ function deleteBoard() {
                 <div id={styles.otherCommentWriteAreaParent2}  className={parentCommentState==="open"?styles[`block`]:styles[`none`]}>
                     
                     <div id={styles.flex}>
-                        <div id={styles.otherCommentWriteNameArea1}>
+                        <div id={styles.otherCommentWriteNameArea2}>
                             <div contentEditable="true" onInput={handleTextChange} suppressContentEditableWarning className={styles.commentWrite1} 
                             id={styles.commentWriteName1} ref={usernameRef}>{text}</div>
                             

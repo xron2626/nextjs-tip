@@ -160,7 +160,7 @@
     flex: 1;
     display: flex;
     justify-content: space-around;
-    background: #ffbebe;
+    background: aliceblue;
     border: 1px solid black;
 }
 #otherCommentContentArea {

@@ -550,7 +550,7 @@ function deleteBoard() {
                                             <div id={styles.otherChildCommentData}  className={childCommentState==="open"?styles[`block`]:styles[`none`]} >
                                                 <div className={styles.childParentL}>
                                                     <div>L</div>
-                                                    <div id={styles.otherCommentWriteNameArea1} >
+                                                    <div id={styles.otherCommentWriteNameArea2} >
                                                         <div 
                                                          suppressContentEditableWarning className={styles.commentWrite1} 
                                                         id={styles.commentWriteName1}>{text}</div>

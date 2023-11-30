@@ -602,7 +602,7 @@ function deleteBoard() {
             <div id={styles.parentCommentGuide} onClick={toggleParentComment}>{parentCommentState==="open"?"댓글 감춤":"댓글 쓰기"}</div>
             <div id={styles.otherCommentWriteAreaParent} className={parentCommentState==="open"?styles[`block`]:styles[`none`]}>
                     <div id={styles.flex}>
-                        <div id={styles.commentWriteNameArea2}>
+                        <div id={styles.commentWriteNameArea1}>
                             <div  className={styles.commentWrite1} id={styles.commentWriteName1} >{text}</div>
                         </div>
                     </div>
