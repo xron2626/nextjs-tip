@@ -38,16 +38,15 @@ function AdminBoardReadForm() {
         setUrl().then(function(data) {
             setNickname(data.nickname);
             setSessionId(data.userId);    
-            setText(nickname);
-        }).then(function() {    
+            setText(data.nickname);
+            return sessionId;
+
+        }).then(function(sessionId) {    
             connect(sessionId);
-    
-            if(sessionId!==null) {
-                
-                x();
-            }
+            x();
+            
         })
-    },[sessionId])
+    },[])
 
     const handleTextChange = (e) => {
       setText(e.target.value); // 텍스트 변경 시 상태 업데이트
@@ -502,12 +501,12 @@ function deleteBoard() {
                 <div id={styles.boardTool}>
                     <div id={styles.feedback}>
                         <div id={styles.up} onClick={updateLikeCount}>
-                        <img src="../thumbs-up-solid.svg"></img>
+                            <img src='../thumbs-up-solid.svg' ></img>
                             <div id={styles.likeCount}>{likeCount}</div>
                         </div>
                         <div id={styles.feedbackCenter}></div>
                         <div id={styles.down} onClick={updateDisLikeCount}>
-                        <img src="../thumbs-down-solid.svg"></img>
+                            <img src='../thumbs-down-solid.svg' ></img>
                             <div id={styles.disLikeCount}>{disLikeCount}</div>
                         </div>
                     </div>
@@ -535,23 +534,22 @@ function deleteBoard() {
                                                 return(
                                                 
                                                 <div key={index2} className={styles.childCommentDiv}> 
-                                                    <div className={styles.childCommnetReadArea}> 
-                                                        <div id={styles.childCommentSelector}>L</div>
-                                                        <div id={styles.otherCommentWriteNameArea1}>{item2.nickname}</div>
+                                                    <div className={styles.childCommentDivChildCommentDiv}>
+                                                        
+                                                        <div className={styles.childCommnetReadArea}> 
+                                                            <div id={styles.otherCommentWriteNameArea1}>{item2.nickname}</div>
+                                                        </div>                                 
                                                     </div>
-                                                    
                                                     <div id={styles.childCommentReadContent}>{item2.content}</div>
-
-                                                    
+                                                    <hr className={styles.hr}/>
                                                 </div>)
                                         })}
-
+                                        
                                         <div id={styles.childCommentSelector}>
                                             <div className={styles.childCommentGuide } onClick={toggleChildComment}>{childCommentState==="open"?"대댓글 감춤":"대댓글 쓰기"}</div>
                                             <div id={styles.otherChildCommentData}  className={childCommentState==="open"?styles[`block`]:styles[`none`]} >
                                                 <div className={styles.childParentL}>
-                                                    <div>L</div>
-                                                    <div id={styles.otherCommentWriteNameArea1} >
+                                                    <div id={styles.otherCommentWriteNameArea2} >
                                                         <div 
                                                          suppressContentEditableWarning className={styles.commentWrite1} 
                                                         id={styles.commentWriteName1}>{text}</div>
@@ -568,6 +566,7 @@ function deleteBoard() {
                                                 </div>  
                                             </div>
                                         </div>
+                                        <hr className={styles.hr}/>
                                 </div>
                             </div>
                         </div>

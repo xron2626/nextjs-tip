@@ -4,7 +4,7 @@ import styles from "./NoneUserBoardReadForm.module.css"
 import React, { useRef,useEffect, useState } from 'react';
 import SockJS from 'sockjs-client';
 import {Stomp} from '@stomp/stompjs';
-import {useRouter} from "next/navigation";
+
 
 
 
@@ -12,7 +12,7 @@ function NoneUserBoardReadForm() {
     
 
     const [isAddComment,setIsAddComment] = useState(false);
-    const [router, setRouter] = useState(useRouter());
+
     const [commentList, setCommentList] = useState([]);
     const [text, setText] = useState('이름'); // 텍스트 상태 설정
     const [childCommentState, setChildCommentState] = useState('close'); // 텍스트 상태 설정
@@ -92,11 +92,11 @@ function NoneUserBoardReadForm() {
     
     useEffect(() => {
         setUrl().then(function(data) {
-
             setSessionId(data);
-        }).then(function() {
-
-            connect();
+            return data;
+        }).then(function(sessionId) {
+        
+            connect(sessionId);
             setButton();
             x();
         })
@@ -222,7 +222,7 @@ function NoneUserBoardReadForm() {
         })
     }
 
-    function sendMessage(boardId,summaryCommentContent,commentWriter) {
+    function sendMessage(boardId,summaryCommentContent) {
 
         let data = {
             message:"update"
@@ -230,7 +230,7 @@ function NoneUserBoardReadForm() {
         
         stompClient.send("/app/send-message-to-user", {"sessionId":sessionId},JSON.stringify(data));
 
-        return setAlarmData(boardId,summaryCommentContent,commentWriter)
+        return setAlarmData(boardId,summaryCommentContent,sessionId)
         .then(function (response) {
             // window.location.href = window.location.href
                 setCommentList([]);
@@ -264,7 +264,7 @@ function NoneUserBoardReadForm() {
         credentials: "include"
 
     }
-    alert(" isAddComment = "+isAddComment);
+    // alert(" isAddComment = "+isAddComment);
         if(isAddComment===false) {
             
         setIsAddComment(true);
@@ -295,8 +295,8 @@ function NoneUserBoardReadForm() {
         let data = {
             method: "POST",
             headers: {
-                  // Accept: "application/json",
-                 "Content-Type": "application/json"
+                Accept: "application/json",
+                "Content-Type": "application/json"
             },
             body: JSON.stringify({
             "userId": sessionId,
@@ -306,7 +306,7 @@ function NoneUserBoardReadForm() {
         credentials: "include"
 
     }
-    alert(" isAddComment = "+isAddComment);
+    // alert(" isAddComment = "+isAddComment);
         if(isAddComment===false) {
             
         setIsAddComment(true);
@@ -316,11 +316,11 @@ function NoneUserBoardReadForm() {
             }
             return response.text();
             }).then(function(data) {
-        
+            
         //"http://localhost:8080/boards"+boardId;
         // 알림 서비스 추가
 
-            return sendMessage(boardId,parentCommentContentRef.current.value,usernameRef.current.textContent);
+            return sendMessage(boardId,commentContentRef.current.value);
             }).then(function() {
 
             });
@@ -335,18 +335,19 @@ function NoneUserBoardReadForm() {
         parentCommentContentRef.current.style.height = (12+parentCommentContentRef.current.scrollHeight)+"px";
     }
   
-    function connect() {
+    function connect(sessionId) {
+        
         const socket = new SockJS(domainUri+'/my-websocket-endpoint');
         const client = Stomp.over(socket);
-
+        
         client.connect({}, function(frame) {
             console.log('Connected: ' + frame);
-                stompClient.subscribe('/user/'+sessionId+'/queue/messages', function(message) {
+                client.subscribe('/user/'+sessionId+'/queue/messages', function(message) {
                 alert("새로운 글이 작성되었습니다");
             });
         });
         setStompClient(client);
-
+        
       }
 
 
@@ -597,12 +598,12 @@ function deleteBoard() {
                                                 
                                                 <div key={index2} className={styles.childCommentDiv}> 
                                                     <div className={styles.childCommnetReadArea}> 
-                                                        <div id={styles.childCommentSelector}>L</div>
+                                                        
                                                         <div id={styles.otherCommentWriteNameArea1}>{item2.nickname}</div>
                                                     </div>
                                                     
                                                     <div id={styles.childCommentReadContent}>{item2.content}</div>
-
+                                                    <hr className={styles.hr}/>
                                                     
                                                 </div>)
                                         })}
@@ -613,8 +614,7 @@ function deleteBoard() {
                                                 <div className={styles.childParentL}>
                                                     <div className={styles.childParentLDiv}>
                                                         <div className={styles.childParentLDivChildDiv}>
-                                                            <div>L</div>
-                                                            <div id={styles.otherCommentWriteNameArea1} >
+                                                            <div id={styles.otherCommentWriteNameArea2} >
                                                                 <div contentEditable="true"
                                                                 onInput={(e) => {handleChildCommentUsername(e,index)}} suppressContentEditableWarning className={styles.commentWrite1} 
                                                                 id={styles.commentWriteName1}>{childCommentWriteUserName[index]}</div>
@@ -638,6 +638,7 @@ function deleteBoard() {
                                                 </div>  
                                             </div>
                                         </div>
+                                        <hr className={styles.hr}/>
                                 </div>
                             </div>
                         </div>

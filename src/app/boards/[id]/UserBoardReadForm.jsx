@@ -41,17 +41,16 @@ function UserBoardReadForm() {
         setUrl().then(function(data) {
             setNickname(data.nickname);
             setSessionId(data.userId);    
-            setText(nickname);
-        }).then(function() {    
-            
+            setText(data.nickname);
+            return data.userId;
+        }).then(function(sessionId) {
+            // alert(sessionId);
             connect(sessionId);
             setButton();
-            if(sessionId!==null) {
-                
-                x();
-            }
+            x();
+            
         })
-    },[sessionId])
+    },[])
 
     const handleTextChange = (e) => {
       setText(e.target.value); // 텍스트 변경 시 상태 업데이트
@@ -528,21 +527,21 @@ function deleteBoard() {
                 <div id={styles.boardTool}>
                     <div id={styles.feedback} ref={feedbackRef}>
                         <div id={styles.up} onClick={updateLikeCount}>
-                        <img src="../thumbs-up-solid.svg"></img>
+                            <img src="../thumbs-up-solid.svg"></img>
                             <div id={styles.likeCount}>{likeCount}</div>
                         </div>
                         <div id={styles.feedbackCenter}></div>
                         <div id={styles.down} onClick={updateDisLikeCount}>
-                        <img src="../thumbs-up-solid.svg"></img>
+                        <img src="../thumbs-down-solid.svg"></img>
                             <div id={styles.disLikeCount}>{disLikeCount}</div>
                         </div>
                     </div>
+                    <div id={styles.manage} ref={manageRef}>
+                        <div id={styles.edit} onClick={editBoard} ref={editButtonRef}>수정</div>
+                        <div id={styles.delete} onClick={deleteBoard} ref={deleteButtonRef}>삭제</div>
+                    </div>
                 </div>
             </div>
-            <div id={styles.manage} ref={manageRef}>
-                        <button id={styles.edit} onClick={editBoard} ref={editButtonRef}>수정</button>
-                        <button id={styles.delete} onClick={deleteBoard} ref={deleteButtonRef}>삭제</button>
-                    </div>
             <div id={styles.comment}>댓글</div>
             <div id={styles.commentGroup}>
             {commentList.map((item, index) => (
@@ -561,12 +560,11 @@ function deleteBoard() {
                                                 
                                                 <div key={index2} className={styles.childCommentDiv}> 
                                                     <div className={styles.childCommnetReadArea}> 
-                                                        <div id={styles.childCommentSelector}>L</div>
                                                         <div id={styles.otherCommentWriteNameArea1}>{item2.nickname}</div>
                                                     </div>
                                                     
                                                     <div id={styles.childCommentReadContent}>{item2.content}</div>
-
+                                                    <hr className={styles.hr}/>
                                                     
                                                 </div>)
                                         })}
@@ -575,8 +573,7 @@ function deleteBoard() {
                                             <div className={styles.childCommentGuide } onClick={toggleChildComment}>{childCommentState==="open"?"대댓글 감춤":"대댓글 쓰기"}</div>
                                             <div id={styles.otherChildCommentData}  className={childCommentState==="open"?styles[`block`]:styles[`none`]} >
                                                 <div className={styles.childParentL}>
-                                                    <div>L</div>
-                                                    <div id={styles.otherCommentWriteNameArea1} >
+                                                    <div id={styles.otherCommentWriteNameArea2} >
                                                         <div 
                                                          suppressContentEditableWarning className={styles.commentWrite1} 
                                                         id={styles.commentWriteName1}>{text}</div>
@@ -592,7 +589,8 @@ function deleteBoard() {
                                                 </div>  
                                             </div>
                                         </div>
-                                </div>
+                                        <hr className={styles.hr}/>
+                                    </div>
                             </div>
                         </div>
                     </div>
