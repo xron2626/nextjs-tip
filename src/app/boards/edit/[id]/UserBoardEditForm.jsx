@@ -74,7 +74,7 @@ function UserBoardEditForm() {
     }
 
 useEffect(() => {
-    alert("회원");
+    
     const script = document.createElement("script");
     script.src = "/ckeditor/ckeditor.js";
     console.log("??");

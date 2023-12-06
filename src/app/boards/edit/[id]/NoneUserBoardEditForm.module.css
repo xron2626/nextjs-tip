@@ -182,6 +182,7 @@
     border-left: 2px solid black;
     width:2cm;
     display: flex;
+    cursor: pointer;
     justify-content: space-evenly;
     flex-direction: row;
     align-items: center;

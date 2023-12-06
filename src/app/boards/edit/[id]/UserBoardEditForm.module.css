@@ -176,6 +176,7 @@ Header {
     flex-direction: row;
     align-items: center;
     flex-wrap: wrap;
+    cursor: pointer;
 
     /* 텍스트 space-evently 로 가운데 정렬 해보기 */
 }
