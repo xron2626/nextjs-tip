@@ -139,7 +139,6 @@
 }
 
 .thId {
-    background-color: pink;
     width: 20%;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -147,21 +146,21 @@
 }
 
 .thTitle {
-    background-color: aqua;
+
     width: 30%;
     text-overflow: ellipsis;
     overflow: hidden;
 }
 
 .thAuthor {
-    background-color: aquamarine;
+
     width: 30%;
     text-overflow: ellipsis;
     overflow: hidden;
 }
 
 .thContent {
-    background-color: pink;
+
     width: 30%;
     text-overflow: ellipsis;
     overflow: hidden;
