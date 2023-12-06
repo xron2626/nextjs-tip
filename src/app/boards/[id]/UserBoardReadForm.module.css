@@ -32,7 +32,7 @@
 }
 
 #boardTool {
-    display: flex;
+
     width: 90%;
     transform: translateX(-50%);
     margin-left: 50%;
@@ -76,12 +76,14 @@
 #edit {
     background-color: lavender;
     cursor: pointer;
-    padding: 10px;
+    padding:10px;
+    border: 3px solid black;
 }
 #delete {
     background-color: lavender;
     cursor: pointer;
-    padding: 10px;
+    padding:10px;
+    border: 3px solid black;
     margin-left: 20px;
     margin-right: 10px;
 }
