@@ -262,7 +262,7 @@ function Alarm() {
             
               <tbody id={styles.tbody}>
                 {boards.map((board, index) => (
-                  <tr key={index} onClick= {() =>window.location.href="/boards/"+board.boardId}>
+                  <tr key={index} className={styles.tr} onClick= {() =>window.location.href="/boards/"+board.boardId} >
                     <td className={`${styles.td} ${styles.thId}`}>{board.id}</td>
                     <td className={`${styles.td} ${styles.thTitle}`}>{board.title}</td>
                     <td className={`${styles.td} ${styles.thAuthor}`}>{board.boardWriterId}</td>

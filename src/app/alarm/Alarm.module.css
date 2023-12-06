@@ -133,7 +133,9 @@
 
 
 }
-
+.tr {
+    cursor: pointer;
+}
 .td {
     border-bottom: 2px solid black;
 }
