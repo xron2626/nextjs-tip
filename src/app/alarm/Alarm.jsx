@@ -265,7 +265,7 @@ function Alarm() {
                   <tr key={index} className={styles.tr} onClick= {() =>window.location.href="/boards/"+board.boardId} >
                     <td className={`${styles.td} ${styles.thId}`}>{board.id}</td>
                     <td className={`${styles.td} ${styles.thTitle}`}>{board.title}</td>
-                    <td className={`${styles.td} ${styles.thAuthor}`}>{board.boardWriterId}</td>
+                    <td className={`${styles.td} ${styles.thAuthor}`}>{board.commentWriter}</td>
                     <td className={`${styles.td} ${styles.thContent}`}>{board.summaryCommentContent}</td>
                   </tr>))}
                 </tbody>
