@@ -161,7 +161,7 @@ let jwtTimeData = {
     let idData = (pageQuantity - 1) * boardQuantity + 1;
     let currentSize = 1;
     let boardSize = 1;
-
+    
     fetch(domainUri+"/boards?pageQuantity="+pageQuantity+"&boardQuantity="+boardQuantity, data).then(function (response) {
         return response.json();
     }).then(function (responseData) {

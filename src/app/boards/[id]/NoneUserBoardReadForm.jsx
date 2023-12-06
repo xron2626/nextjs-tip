@@ -41,9 +41,12 @@ function NoneUserBoardReadForm() {
         }
     };
     const handleChildCommentUsername = (e,index) => {
+        
         const updatedUserNames = [...childCommentWriteUserName];
         updatedUserNames[index]=e.target.value;
         setChildCommentWriteUserName(updatedUserNames); // 텍스트 변경 시 상태 업데이트
+        alert(childCommentWriteUserName[index]);
+
     };
    
 
@@ -74,7 +77,6 @@ function NoneUserBoardReadForm() {
     const feedbackRef = useRef(null);
     const manageRef = useRef(null);
     const parentCommentContentRef = useRef(null);
-    const commentContentRef = useRef(null);
     const [boardWriterName, setBoardWriterName] = useState(null); 
 
     let likeCountNumber;
@@ -248,6 +250,8 @@ function NoneUserBoardReadForm() {
         // alert(childCommentWriteUserName);
         // alert(childCommentWritePassword);
         // alert(childCommentWriteContent);
+        alert("username = "+childCommentWriteUserName[0]);
+        alert("password = "+childCommentWritePassword[0]);
         let url = domainUri+"/noneUser/childComment/"+boardId;
         let data = {
             method: "POST",
@@ -320,7 +324,7 @@ function NoneUserBoardReadForm() {
         //"http://localhost:8080/boards"+boardId;
         // 알림 서비스 추가
 
-            return sendMessage(boardId,commentContentRef.current.value);
+            return sendMessage(boardId,parentCommentContentRef.current.value);
             }).then(function() {
 
             });
@@ -615,9 +619,9 @@ function deleteBoard() {
                                                     <div className={styles.childParentLDiv}>
                                                         <div className={styles.childParentLDivChildDiv}>
                                                             <div id={styles.otherCommentWriteNameArea2} >
-                                                                <div contentEditable="true"
-                                                                onInput={(e) => {handleChildCommentUsername(e,index)}} suppressContentEditableWarning className={styles.commentWrite1} 
-                                                                id={styles.commentWriteName1}>{childCommentWriteUserName[index]}</div>
+                                                                <input type="text" value={childCommentWriteUserName[index]}
+                                                                onInput={(e) => {handleChildCommentUsername(e,index)}} className={styles.commentWrite1} 
+                                                                id={styles.commentWriteName1}/>
                                                             </div>
                                                         </div>
                                                         <div id={styles.otherCommentWritePasswordArea}>

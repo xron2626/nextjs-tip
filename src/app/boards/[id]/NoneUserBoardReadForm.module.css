@@ -201,6 +201,12 @@
     display: flex;
     flex:1;
 }
+#commentWriteName1 {
+    border: 0px;
+    background: #d3d3d375;
+    width: 100%;
+    text-align: center;
+}
 .otherCommentWritePassword1 {
     width: 100%;
 }
