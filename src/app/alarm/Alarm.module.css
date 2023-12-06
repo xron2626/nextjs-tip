@@ -133,6 +133,9 @@
 
 
 }
+#thead {
+    background-color: lavender;
+}
 .tr {
     cursor: pointer;
 }
@@ -141,7 +144,7 @@
 }
 
 .thId {
-    width: 20%;
+    width: 10%;
     text-overflow: ellipsis;
     overflow: hidden;
 
