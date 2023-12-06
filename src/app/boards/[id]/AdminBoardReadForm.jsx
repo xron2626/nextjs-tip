@@ -561,8 +561,8 @@ function deleteBoard() {
                                                     <textarea className={`${styles.parentWriteCommentContent} ${styles.parentWriteComment1}`}   style={{height: "100px"}}
                                                     onKeyUp={resize} onKeyDown={resize}  value={childCommentWriteContent[index]} onChange={(e) => {handleChildCommentContent(e, index)}} ></textarea>
                                                 </div>
-                                                <div className={styles.parentCommentSubmitArea} id={styles.parentWriteCommentSubmit1}>
-                                                    <div className={styles.parentCommentSubmit}  onClick={()=>childCommentSubmit(item.objectId,item.userId,index)} >전송</div>
+                                                <div className={styles.parentCommentSubmitArea} id={styles.parentWriteCommentSubmit1} onClick={()=>childCommentSubmit(item.objectId,item.userId,index)}>
+                                                    <div className={styles.parentCommentSubmit} >전송</div>
                                                 </div>  
                                             </div>
                                         </div>
@@ -584,8 +584,8 @@ function deleteBoard() {
                         <textarea className={styles.parentWriteCommentArea}  id={styles.parentWriteComment1} style={{height: "100px"}}
                         ref={commentContentRef} onKeyUp={resize} onKeyDown={resize} defaultValue="내용"></textarea>
                     </div>
-                    <div className={styles.parentCommentSubmitArea} id={styles.parentWriteCommentSubmit1}>
-                        <div className={styles.parentCommentSubmit} onClick={parentCommentSubmit} >전송</div>
+                    <div className={styles.parentCommentSubmitArea} id={styles.parentWriteCommentSubmit1} onClick={parentCommentSubmit}>
+                        <div className={styles.parentCommentSubmit}  >전송</div>
                     </div>
                 </div>
             </div>
