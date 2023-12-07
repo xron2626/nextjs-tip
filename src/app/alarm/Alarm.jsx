@@ -218,7 +218,7 @@ function Alarm() {
      
     
   return (
-    <div>
+    <body id={styles.body}>
       <div className={styles.area21}>
         <input type="button" value="로그인" id={styles.loginBox} className={styles.box} style={{cursor:"pointer"}}
                onClick={() =>window.location.href ='/login'}/>
@@ -294,7 +294,7 @@ function Alarm() {
       <footer id={styles.footer}>
         <h2 id={styles.footerText}>간단한 게시판 만들기 - 정재광</h2>
       </footer>
-    </div>
+    </body>
   );
 }
 export default Alarm;

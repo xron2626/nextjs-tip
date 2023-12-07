@@ -1,3 +1,9 @@
+#body {
+    width: 90%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    max-width: 1200px;
+}
 #Header {
     /*background-color: pink;*/
     width: 100%;
@@ -198,12 +204,9 @@
 }
 
 #footerText {
-    display: flex;
-    position: relative;
-    align-content: flex-end;
-    justify-content: space-around;
-    padding-left: calc((100vw - 100%) / 2); /* 브라우저의 스크롤바 너비를 계산하여 왼쪽 패딩 값을 조정합니다 */
-
+    margin-left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
 }
 
 .container2 {

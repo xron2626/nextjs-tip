@@ -45,7 +45,7 @@ function NoneUserBoardReadForm() {
         const updatedUserNames = [...childCommentWriteUserName];
         updatedUserNames[index]=e.target.value;
         setChildCommentWriteUserName(updatedUserNames); // 텍스트 변경 시 상태 업데이트
-        alert(childCommentWriteUserName[index]);
+        // alert(childCommentWriteUserName[index]);
 
     };
    
@@ -250,8 +250,8 @@ function NoneUserBoardReadForm() {
         // alert(childCommentWriteUserName);
         // alert(childCommentWritePassword);
         // alert(childCommentWriteContent);
-        alert("username = "+childCommentWriteUserName[0]);
-        alert("password = "+childCommentWritePassword[0]);
+        // alert("username = "+childCommentWriteUserName[0]);
+        // alert("password = "+childCommentWritePassword[0]);
         let url = domainUri+"/noneUser/childComment/"+boardId;
         let data = {
             method: "POST",
