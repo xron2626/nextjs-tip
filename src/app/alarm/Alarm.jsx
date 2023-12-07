@@ -252,7 +252,7 @@ function Alarm() {
           <article id={styles.article}>
             <table id={styles.table}>
               <thead id={styles.thead}>
-                <tr  >
+                <tr >
                   <th className={`${styles.thId} ${styles.th}`}>게시판 id</th>
                   <th className={`${styles.thTitle} ${styles.th}`}>게시판 이름</th>
                   <th className={`${styles.thAuthor} ${styles.th}`}>댓글 유저 이름</th>

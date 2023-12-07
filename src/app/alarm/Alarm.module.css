@@ -142,6 +142,9 @@
 #thead {
     background-color: lavender;
 }
+.th {
+    padding: 10px;
+}
 .tr {
     cursor: pointer;
 }
@@ -153,6 +156,7 @@
     width: 10%;
     text-overflow: ellipsis;
     overflow: hidden;
+    white-space: nowrap
 
 }
 
@@ -161,6 +165,7 @@
     width: 30%;
     text-overflow: ellipsis;
     overflow: hidden;
+    white-space: nowrap
 }
 
 .thAuthor {
@@ -168,6 +173,7 @@
     width: 30%;
     text-overflow: ellipsis;
     overflow: hidden;
+    white-space: nowrap
 }
 
 .thContent {
@@ -175,6 +181,7 @@
     width: 30%;
     text-overflow: ellipsis;
     overflow: hidden;
+    white-space: nowrap
 }
 
 
