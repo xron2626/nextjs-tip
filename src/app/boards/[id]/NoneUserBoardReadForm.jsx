@@ -303,7 +303,7 @@ function NoneUserBoardReadForm() {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-            "userId": sessionId,
+            "password": passwordRef.current.value,
             "nickname": usernameRef.current.textContent,
             "content":parentCommentContentRef.current.value,
         }),
@@ -620,8 +620,8 @@ function deleteBoard() {
                                                         <div className={styles.childParentLDivChildDiv}>
                                                             <div id={styles.otherCommentWriteNameArea2} >
                                                                 <input type="text" value={childCommentWriteUserName[index]}
-                                                                onInput={(e) => {handleChildCommentUsername(e,index)}} className={styles.commentWrite1} 
-                                                                id={styles.commentWriteName1}/>
+                                                                onInput={(e) => {handleChildCommentUsername(e,index)}} className={styles.commentWriteName1} 
+                                                                />
                                                             </div>
                                                         </div>
                                                         <div id={styles.otherCommentWritePasswordArea}>
