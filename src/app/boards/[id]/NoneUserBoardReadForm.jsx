@@ -118,7 +118,7 @@ function NoneUserBoardReadForm() {
                 deleteButtonRef.current.style.display="none";
                 editButtonRef.current.style.display="none";
                 manageRef.current.style.display="none";
-                feedbackRef.current.style.width="100%";
+                feedbackRef.current.style.width="90%";
 
             }
         })
@@ -140,10 +140,12 @@ function NoneUserBoardReadForm() {
             return response.text();
         });
     }
+    // boardId를 가져옴 
     function getBoardId() {
         boardId = window.location.href.split("/boards/")[1];
         return boardId;
     }
+    // 일반 사용자인지 확인 
     function isUser(commentWriter) {
         // alert("isJustUser "+boxardWriterName.includes("_"));
         if(boardWriterName.includes("_")) {
@@ -152,6 +154,7 @@ function NoneUserBoardReadForm() {
         // alert("it is not Just User");
         return isAdmin(commentWriter);
     }
+    // 어드민인지 확인 
     function isAdmin(userId) {
         
         let data= {
@@ -576,13 +579,12 @@ function deleteBoard() {
                             <div id={styles.disLikeCount}>{disLikeCount}</div>
                         </div>
                     </div>
-                    
                 </div>
             </div>
             <div id={styles.manage} ref={manageRef}>
-                        <button id={styles.edit} onClick={editBoard} ref={editButtonRef}>수정</button>
-                        <button id={styles.delete} onClick={deleteBoard} ref={deleteButtonRef}>삭제</button>
-                    </div>
+                <button id={styles.edit} onClick={editBoard} ref={editButtonRef}>수정</button>
+                <button id={styles.delete} onClick={deleteBoard} ref={deleteButtonRef}>삭제</button>
+            </div>
             <div id={styles.comment}>댓글</div>
             <div id={styles.commentGroup}>
             {commentList.map((item, index) => (
